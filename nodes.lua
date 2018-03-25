@@ -85,7 +85,7 @@ minetest.register_node("bridger:suspension_top_"..bridge_colors, {
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, 0, -0.5, 0.5, 0.5, 0.5},
+			{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
 			{-0.125, -0.5, -0.125, 0.125, 0.4, 0.125},
 		},
 	},
