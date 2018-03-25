@@ -4578,15 +4578,22 @@ minetest.register_node("bridger:foundation", {
 	drawtype = "nodebox",
 	tiles = {"default_clay.png"},
 	paramtype = "light",
+	sunlight_propagates = true,
 	node_box = {
 		type = "fixed",
 		fixed = {
-			{-0.5, -0.5, -0.75, 0.5, 0.5, 0.75}, -- NodeBox1
+			{-0.5, -0.5, -0.75, 0.5, 0.501, 0.75}, -- NodeBox1
 			{-0.501, -0.5, -0.501, 0.501, 0.6876, 0.501}, -- NodeBox2
-			{-0.75, -0.5, -0.5, 0.75, 0.5, 0.5}, -- NodeBox3
+			{-0.75, -0.5, -0.5, 0.75, 0.501, 0.5}, -- NodeBox3
 			{-0.75, -0.5, -0.75, 0.75, 0.499, 0.75}, -- NodeBox4
 		},
 	},
+	selection_box = {
+		type = "fixed",
+        fixed = {
+            {-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+		},
+    },
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 })
