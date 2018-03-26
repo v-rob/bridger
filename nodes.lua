@@ -86,7 +86,7 @@ minetest.register_node("bridger:suspension_top_"..bridge_colors, {
 		type = "fixed",
 		fixed = {
 			{-0.5, -0.5, -0.5, 0.5, 0, 0.5},
-			{-0.125, -0.5, -0.125, 0.125, 0.4, 0.125},
+			{-0.125, -0.5, -0.125, 0.125, 0.5, 0.125},
 		},
 	},
 	groups = {cracky=3},
@@ -3295,7 +3295,7 @@ minetest.register_node("bridger:medium_support_"..bridge_colors, {
 	selection_box = {
 		type = "fixed",
         fixed = {
-            {-1.5, -0.5, 0, 1.5, 2.5, 0.625},
+            {-1.5, -0.5, 0, 1.5, 2.5, 0.5},
 		},
     },
 	groups = {cracky=3},
@@ -3321,7 +3321,7 @@ minetest.register_node("bridger:medium_support_bot_"..bridge_colors, {
 	selection_box = {
 		type = "fixed",
         fixed = {
-            {-1.5, -0.5, 0, 1.5, 0.5, 0.625},
+            {-1.5, -0.5, 0, 1.5, 0.5, 0.5},
 		},
     },
 	groups = {cracky=3},
@@ -3439,7 +3439,7 @@ minetest.register_node("bridger:large_support_"..bridge_colors, {
 	selection_box = {
 		type = "fixed",
         fixed = {
-            {-2.5, -0.5, 0, 2.5, 2.5, 0.625},
+            {-2.5, -0.5, 0, 2.5, 2.5, 0.5},
 		},
     },
 	groups = {cracky=3},
@@ -3465,7 +3465,7 @@ minetest.register_node("bridger:large_support_bot_"..bridge_colors, {
 	selection_box = {
 		type = "fixed",
         fixed = {
-            {-2.5, -0.5, 0, 2.5, 0.5, 0.625},
+            {-2.5, -0.5, 0, 2.5, 0.5, 0.5},
 		},
     },
 	groups = {cracky=3},
