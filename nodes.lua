@@ -26,9 +26,6 @@ if minetest.get_modpath("moreblocks") then
 		groups = {cracky=3},
 		sounds = default.node_sound_metal_defaults(),
 	})
-	
-	stairsplus:register_alias_all("bridges", "block_"..bridge_colors, "bridger", "block_"..bridge_colors)
-	
 elseif minetest.get_modpath("stairs") then
 	stairs.register_stair_and_slab(
 		"block_"..bridge_colors,

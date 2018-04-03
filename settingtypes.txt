@@ -1,0 +1,3 @@
+#Setting of Bridger
+
+Bridger_enable_alias	(For use old alias of Bridges)		bool false
