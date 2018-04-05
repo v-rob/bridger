@@ -19,15 +19,24 @@ minetest.register_node("bridger:block_"..bridge_colors, {
 	sounds = default.node_sound_metal_defaults(),
 })
 
-stairs.register_stair_and_slab(
-	"block_"..bridge_colors,
-	"bridger:block_"..bridge_colors,
-	{cracky=3},
-	{"bridges_"..bridge_colors..".png"},
-	bridge_desc.." Stair",
-	bridge_desc.." Slab",
-	default.node_sound_metal_defaults()
-)
+if minetest.get_modpath("moreblocks") then
+	stairsplus:register_all("bridger", "block_"..bridge_colors, "bridger:block_"..bridge_colors, {
+		description = bridge_desc,
+		tiles = {"bridges_"..bridge_colors..".png"},
+		groups = {cracky=3},
+		sounds = default.node_sound_metal_defaults(),
+	})
+elseif minetest.get_modpath("stairs") then
+	stairs.register_stair_and_slab(
+		"block_"..bridge_colors,
+		"bridger:block_"..bridge_colors,
+		{cracky=3},
+		{"bridges_"..bridge_colors..".png"},
+		bridge_desc.." Stair",
+		bridge_desc.." Slab",
+		default.node_sound_metal_defaults()
+	)
+end
 
 local function rotate_and_place(itemstack, placer, pointed_thing)
 	local p0 = pointed_thing.under
