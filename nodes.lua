@@ -36,6 +36,28 @@ elseif minetest.get_modpath("stairs") then
 		bridge_desc.." Slab",
 		default.node_sound_metal_defaults()
 	)
+
+	minetest.register_node("bridger:step_"..bridge_colors, {
+		description = bridge_desc.." Step",
+		drawtype = "nodebox",
+		tiles = {"bridges_"..bridge_colors..".png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, 0, 0.5, 0, 0.5},
+			},
+		},
+		groups = {cracky=3},
+		sounds = default.node_sound_metal_defaults(),
+		on_place = function(itemstack, placer, pointed_thing)
+			if pointed_thing.type ~= "node" then
+				return itemstack
+			end
+			return rotate_and_place(itemstack, placer, pointed_thing)
+		end,
+	})
 end
 
 local function rotate_and_place(itemstack, placer, pointed_thing)
@@ -62,28 +84,6 @@ local function rotate_and_place(itemstack, placer, pointed_thing)
 	end
 	return minetest.item_place(itemstack, placer, pointed_thing, param2)
 end
-
-minetest.register_node("bridger:step_"..bridge_colors, {
-	description = bridge_desc.." Step",
-	drawtype = "nodebox",
-	tiles = {"bridges_"..bridge_colors..".png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, -0.5, 0, 0.5, 0, 0.5},
-		},
-	},
-	groups = {cracky=3},
-	sounds = default.node_sound_metal_defaults(),
-	on_place = function(itemstack, placer, pointed_thing)
-		if pointed_thing.type ~= "node" then
-			return itemstack
-		end
-		return rotate_and_place(itemstack, placer, pointed_thing)
-	end,
-})
 
 minetest.register_node("bridger:suspension_top_"..bridge_colors, {
 	description = bridge_desc.." Cable Top",
