@@ -12,6 +12,7 @@ for _, color in pairs(bridger_colors) do
 
 	if minetest.get_modpath("moreblocks") then
 		stairsplus:register_alias_all("bridges", "block_"..oldname, "bridger", "block_"..newname)
+		minetest.register_alias("bridges:step_"..oldname, "bridger:panel_block_"..newname)
 	elseif minetest.get_modpath("stairs") then
 		minetest.register_alias("stairs:slab_block_"..oldname, "stairs:slab_block_"..newname)
 		minetest.register_alias("stairs:stair_block_"..oldname, "stairs:stair_block_"..newname)
