@@ -4423,6 +4423,12 @@ minetest.register_node("bridger:large_beam_swivel_normal", {
 	end,
 	groups = {choppy=3},
 	sounds = default.node_sound_wood_defaults(),
+	mesecons = {effector = {
+		action_on = function (pos, node)
+			minetest.swap_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
+		end,
+	}},
+	on_blast = mesecon.on_blastnode,
 })
 
 minetest.register_node("bridger:large_beam_swivel_open", {
@@ -4456,6 +4462,12 @@ minetest.register_node("bridger:large_beam_swivel_open", {
 	drop = "bridger:large_beam_swivel_normal",
 	groups = {choppy=3, not_in_creative_inventory=1},
 	sounds = default.node_sound_wood_defaults(),
+	mesecons = {effector = {
+		action_off = function (pos, node)
+			minetest.swap_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
+		end,
+	}},
+	on_blast = mesecon.on_blastnode,
 })
 
 minetest.register_node("bridger:large_drawbridge_normal", {
@@ -4488,6 +4500,11 @@ minetest.register_node("bridger:large_drawbridge_normal", {
 	end,
 	groups = {choppy=3},
 	sounds = default.node_sound_wood_defaults(),
+	mesecons = {effector = {
+		action_on = function (pos, node)
+			minetest.swap_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
+		end,
+	}},
 })
 
 minetest.register_node("bridger:large_drawbridge_open", {
@@ -4560,6 +4577,12 @@ minetest.register_node("bridger:large_drawbridge_open", {
 	drop = "bridger:large_drawbridge_normal",
 	groups = {choppy=3, not_in_creative_inventory=1},
 	sounds = default.node_sound_wood_defaults(),
+	mesecons = {effector = {
+		action_off = function (pos, node)
+			minetest.swap_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
+		end,
+	}},
+	on_blast = mesecon.on_blastnode,
 })
 
 minetest.register_node("bridger:deck_wood", {
