@@ -1,3 +1,28 @@
+local function rotate_and_place(itemstack, placer, pointed_thing)
+	local p0 = pointed_thing.under
+	local p1 = pointed_thing.above
+	local param2 = 0
+
+	local placer_pos = placer:getpos()
+	if placer_pos then
+		param2 = minetest.dir_to_facedir(vector.subtract(p1, placer_pos))
+	end
+
+	local finepos = minetest.pointed_thing_to_face_pos(placer, pointed_thing)
+	local fpos = finepos.y % 1
+
+	if p0.y - 1 == p1.y or (fpos > 0 and fpos < 0.5)
+			or (fpos < -0.5 and fpos > -0.999999999) then
+		param2 = param2 + 20
+		if param2 == 21 then
+			param2 = 23
+		elseif param2 == 23 then
+			param2 = 21
+		end
+	end
+	return minetest.item_place(itemstack, placer, pointed_thing, param2)
+end
+
 local bridge_colors = {
 	{"Green", "green"},
 	{"Red", "red"},
@@ -60,31 +85,6 @@ elseif minetest.get_modpath("stairs") then
 			return rotate_and_place(itemstack, placer, pointed_thing)
 		end,
 	})
-end
-
-local function rotate_and_place(itemstack, placer, pointed_thing)
-	local p0 = pointed_thing.under
-	local p1 = pointed_thing.above
-	local param2 = 0
-
-	local placer_pos = placer:getpos()
-	if placer_pos then
-		param2 = minetest.dir_to_facedir(vector.subtract(p1, placer_pos))
-	end
-
-	local finepos = minetest.pointed_thing_to_face_pos(placer, pointed_thing)
-	local fpos = finepos.y % 1
-
-	if p0.y - 1 == p1.y or (fpos > 0 and fpos < 0.5)
-			or (fpos < -0.5 and fpos > -0.999999999) then
-		param2 = param2 + 20
-		if param2 == 21 then
-			param2 = 23
-		elseif param2 == 23 then
-			param2 = 21
-		end
-	end
-	return minetest.item_place(itemstack, placer, pointed_thing, param2)
 end
 
 minetest.register_node("bridger:suspension_top_"..bridge_colors, {
