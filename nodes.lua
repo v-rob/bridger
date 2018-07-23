@@ -4393,197 +4393,368 @@ minetest.register_node("bridger:large_fancy_beam", {
 	sounds = default.node_sound_wood_defaults(),
 })
 
-minetest.register_node("bridger:large_beam_swivel_normal", {
-	description = "Large Wooden Swivel Bridge",
-	drawtype = "nodebox",
-	tiles = {"default_wood.png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	sunlight_propagates = true,
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.4375, -0.5, -1.5, 0.4375, -0.4375, 1.5}, -- NodeBox1
-			{0.40625, -0.5, -0.6875, 0.5, 0.5, -0.59375}, -- NodeBox2
-			{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875}, -- NodeBox3
-			{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875}, -- NodeBox4
-			{-0.5, -0.5, -0.6875, -0.40625, 0.5, -0.59375}, -- NodeBox5
-			{-0.5, 0.375, -1.5, -0.40625, 0.4375, 1.5}, -- NodeBox6
-			{0.40625, 0.375, -1.5, 0.5, 0.4375, 1.5}, -- NodeBox7
+if minetest.get_modpath("mesecons") then
+	minetest.register_node("bridger:large_beam_swivel_normal", {
+		description = "Large Wooden Swivel Bridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -1.5, 0.4375, -0.4375, 1.5}, -- NodeBox1
+				{0.40625, -0.5, -0.6875, 0.5, 0.5, -0.59375}, -- NodeBox2
+				{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875}, -- NodeBox3
+				{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875}, -- NodeBox4
+				{-0.5, -0.5, -0.6875, -0.40625, 0.5, -0.59375}, -- NodeBox5
+				{-0.5, 0.375, -1.5, -0.40625, 0.4375, 1.5}, -- NodeBox6
+				{0.40625, 0.375, -1.5, 0.5, 0.4375, 1.5}, -- NodeBox7
+			},
 		},
-	},
-	selection_box = {
-		type = "fixed",
-        fixed = {
-			{-0.5, -0.5, -1.5, 0.5, 0.5, 1.5},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -1.5, 0.5, 0.5, 1.5},
+			},
 		},
-    },
-	on_rightclick = function(pos, node)
-		minetest.set_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
-	end,
-	groups = {choppy=3},
-	sounds = default.node_sound_wood_defaults(),
-	mesecons = {effector = {
-		action_on = function (pos, node)
-			minetest.swap_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
 		end,
-	}},
-	on_blast = mesecon.on_blastnode,
-})
+		groups = {choppy=3},
+		sounds = default.node_sound_wood_defaults(),
+		mesecons = {effector = {
+			action_on = function (pos, node)
+				minetest.swap_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
+			end,
+		}},
+		on_blast = mesecon.on_blastnode,
+	})
 
-minetest.register_node("bridger:large_beam_swivel_open", {
-	description = "Large Wooden Swivel Bridge",
-	drawtype = "nodebox",
-	tiles = {"default_wood.png^[transformR90"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	sunlight_propagates = true,
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-1.5, -0.5, -0.4375, 1.5, -0.4375, 0.4375}, -- NodeBox1
-			{-0.6875, -0.5, -0.5, -0.59375, 0.5, -0.40625}, -- NodeBox2
-			{0.59375, -0.5, -0.5, 0.6875, 0.5, -0.40625}, -- NodeBox3
-			{0.59375, -0.5, 0.40625, 0.6875, 0.5, 0.5}, -- NodeBox4
-			{-0.6875, -0.5, 0.40625, -0.59375, 0.5, 0.5}, -- NodeBox5
-			{-1.5, 0.375, 0.40625, 1.5, 0.4375, 0.5}, -- NodeBox6
-			{-1.5, 0.375, -0.5, 1.5, 0.4375, -0.40625}, -- NodeBox7
+	minetest.register_node("bridger:large_beam_swivel_open", {
+		description = "Large Wooden Swivel Bridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png^[transformR90"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-1.5, -0.5, -0.4375, 1.5, -0.4375, 0.4375}, -- NodeBox1
+				{-0.6875, -0.5, -0.5, -0.59375, 0.5, -0.40625}, -- NodeBox2
+				{0.59375, -0.5, -0.5, 0.6875, 0.5, -0.40625}, -- NodeBox3
+				{0.59375, -0.5, 0.40625, 0.6875, 0.5, 0.5}, -- NodeBox4
+				{-0.6875, -0.5, 0.40625, -0.59375, 0.5, 0.5}, -- NodeBox5
+				{-1.5, 0.375, 0.40625, 1.5, 0.4375, 0.5}, -- NodeBox6
+				{-1.5, 0.375, -0.5, 1.5, 0.4375, -0.40625}, -- NodeBox7
+			},
 		},
-	},
-	selection_box = {
-		type = "fixed",
-        fixed = {
-			{-1.5, -0.5, -0.5, 1.5, 0.5, 0.5},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-1.5, -0.5, -0.5, 1.5, 0.5, 0.5},
+			},
 		},
-    },
-	on_rightclick = function(pos, node)
-		minetest.set_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
-	end,
-	drop = "bridger:large_beam_swivel_normal",
-	groups = {choppy=3, not_in_creative_inventory=1},
-	sounds = default.node_sound_wood_defaults(),
-	mesecons = {effector = {
-		action_off = function (pos, node)
-			minetest.swap_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
 		end,
-	}},
-	on_blast = mesecon.on_blastnode,
-})
+		drop = "bridger:large_beam_swivel_normal",
+		groups = {choppy=3, not_in_creative_inventory=1},
+		sounds = default.node_sound_wood_defaults(),
+		mesecons = {effector = {
+			action_off = function (pos, node)
+				minetest.swap_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
+			end,
+		}},
+		on_blast = mesecon.on_blastnode,
+	})
 
-minetest.register_node("bridger:large_drawbridge_normal", {
-	description = "Large Wooden Drawbridge",
-	drawtype = "nodebox",
-	tiles = {"default_wood.png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	sunlight_propagates = true,
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.4375, -0.5, -0.5, 0.4375, -0.4375, 1.5}, -- NodeBox1
-			{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625}, -- NodeBox2
-			{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875}, -- NodeBox3
-			{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875}, -- NodeBox4
-			{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625}, -- NodeBox5
-			{-0.5, 0.375, -0.5, -0.40625, 0.4375, 1.5}, -- NodeBox6
-			{0.40625, 0.375, -0.5, 0.5, 0.4375, 1.5}, -- NodeBox7
+	minetest.register_node("bridger:large_drawbridge_normal", {
+		description = "Large Wooden Drawbridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -0.5, 0.4375, -0.4375, 1.5}, -- NodeBox1
+				{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625}, -- NodeBox2
+				{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875}, -- NodeBox3
+				{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875}, -- NodeBox4
+				{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625}, -- NodeBox5
+				{-0.5, 0.375, -0.5, -0.40625, 0.4375, 1.5}, -- NodeBox6
+				{0.40625, 0.375, -0.5, 0.5, 0.4375, 1.5}, -- NodeBox7
+			},
 		},
-	},
-	selection_box = {
-		type = "fixed",
-        fixed = {
-			{-0.5, -0.5, -0.5, 0.5, 0.5, 1.5},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 0.5, 1.5},
+			},
 		},
-    },
-	on_rightclick = function(pos, node)
-		minetest.set_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
-	end,
-	groups = {choppy=3},
-	sounds = default.node_sound_wood_defaults(),
-	mesecons = {effector = {
-		action_on = function (pos, node)
-			minetest.swap_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
 		end,
-	}},
-})
+		groups = {choppy=3},
+		sounds = default.node_sound_wood_defaults(),
+		mesecons = {effector = {
+			action_on = function (pos, node)
+				minetest.swap_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
+			end,
+		}},
+	})
 
-minetest.register_node("bridger:large_drawbridge_open", {
-	description = "Large Wooden Drawbridge",
-	drawtype = "nodebox",
-	tiles = {"default_wood.png"},
-	paramtype = "light",
-	paramtype2 = "facedir",
-	sunlight_propagates = true,
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.4375, -0.5, -0.5, 0.4375, -0.3125, -0.4375}, -- NodeBox1
-			{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625}, -- NodeBox2
-			{0.40625, 0.875, 0.15625, 0.5, 2.125, 0.25}, -- NodeBox3
-			{-0.5, 0.875, 0.15625, -0.40625, 2.125, 0.25}, -- NodeBox4
-			{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625}, -- NodeBox5
-			{-0.5, 0.375, -0.5, -0.40625, 0.5625, -0.4375}, -- NodeBox6
-			{0.40625, 0.375, -0.5, 0.5, 0.5625, -0.4375}, -- NodeBox7
-			{-0.4375, -0.375, -0.4375, 0.4375, -0.1875, -0.375}, -- NodeBox8
-			{-0.4375, -0.25, -0.375, 0.4375, -0.0625, -0.3125}, -- NodeBox9
-			{-0.4375, -0.125, -0.3125, 0.4375, 0.0625, -0.25}, -- NodeBox10
-			{-0.4375, 0, -0.25, 0.4375, 0.1875, -0.1875}, -- NodeBox11
-			{-0.4375, 0.125, -0.1875, 0.4375, 0.3125, -0.125}, -- NodeBox12
-			{-0.4375, 0.25, -0.125, 0.4375, 0.4375, -0.0625}, -- NodeBox13
-			{-0.4375, 0.375, -0.0625, 0.4375, 0.5625, 0}, -- NodeBox14
-			{-0.4375, 0.5, 0, 0.4375, 0.6875, 0.0625}, -- NodeBox15
-			{-0.4375, 0.625, 0.0625, 0.4375, 0.8125, 0.125}, -- NodeBox16
-			{-0.4375, 0.75, 0.125, 0.4375, 0.9375, 0.1875}, -- NodeBox17
-			{-0.4375, 0.875, 0.1875, 0.4375, 1.0625, 0.25}, -- NodeBox18
-			{-0.4375, 1, 0.25, 0.4375, 1.1875, 0.3125}, -- NodeBox19
-			{-0.4375, 1.125, 0.3125, 0.4375, 1.3125, 0.375}, -- NodeBox20
-			{-0.5, 0.5, -0.4375, -0.40625, 0.6875, -0.375}, -- NodeBox21
-			{-0.5, 0.625, -0.375, -0.40625, 0.8125, -0.3125}, -- NodeBox22
-			{-0.5, 0.75, -0.3125, -0.40625, 0.9375, -0.25}, -- NodeBox23
-			{-0.5, 0.875, -0.25, -0.40625, 1.0625, -0.1875}, -- NodeBox24
-			{-0.5, 1, -0.1875, -0.40625, 1.1875, -0.125}, -- NodeBox25
-			{-0.5, 1.125, -0.125, -0.40625, 1.3125, -0.0625}, -- NodeBox26
-			{-0.5, 1.25, -0.0625, -0.40625, 1.4375, 0}, -- NodeBox27
-			{-0.5, 1.375, 0, -0.40625, 1.5625, 0.0625}, -- NodeBox28
-			{-0.5, 1.5, 0.0625, -0.40625, 1.6875, 0.125}, -- NodeBox29
-			{-0.5, 1.625, 0.125, -0.40625, 1.8125, 0.1875}, -- NodeBox30
-			{-0.5, 1.75, 0.1875, -0.40625, 1.9375, 0.25}, -- NodeBox31
-			{-0.5, 1.875, 0.25, -0.40625, 2.0625, 0.3125}, -- NodeBox32
-			{-0.5, 2, 0.3125, -0.40625, 2.1875, 0.375}, -- NodeBox33
-			{0.40625, 0.5, -0.4375, 0.5, 0.6875, -0.375}, -- NodeBox34
-			{0.40625, 0.625, -0.375, 0.5, 0.8125, -0.3125}, -- NodeBox35
-			{0.40625, 0.75, -0.3125, 0.5, 0.9375, -0.25}, -- NodeBox36
-			{0.40625, 0.875, -0.25, 0.5, 1.0625, -0.1875}, -- NodeBox37
-			{0.40625, 1, -0.1875, 0.5, 1.1875, -0.125}, -- NodeBox38
-			{0.40625, 1.125, -0.125, 0.5, 1.3125, -0.0625}, -- NodeBox39
-			{0.40625, 1.25, -0.0625, 0.5, 1.4375, 0}, -- NodeBox40
-			{0.40625, 1.375, 0, 0.5, 1.5625, 0.0625}, -- NodeBox41
-			{0.40625, 1.5, 0.0625, 0.5, 1.6875, 0.125}, -- NodeBox42
-			{0.40625, 1.625, 0.125, 0.5, 1.8125, 0.1875}, -- NodeBox43
-			{0.40625, 1.75, 0.1875, 0.5, 1.9375, 0.25}, -- NodeBox44
-			{0.40625, 1.875, 0.25, 0.5, 2.0625, 0.3125}, -- NodeBox45
-			{0.40625, 2, 0.3125, 0.5, 2.1875, 0.375}, -- NodeBox46
+	minetest.register_node("bridger:large_drawbridge_open", {
+		description = "Large Wooden Drawbridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -0.5, 0.4375, -0.3125, -0.4375}, -- NodeBox1
+				{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625}, -- NodeBox2
+				{0.40625, 0.875, 0.15625, 0.5, 2.125, 0.25}, -- NodeBox3
+				{-0.5, 0.875, 0.15625, -0.40625, 2.125, 0.25}, -- NodeBox4
+				{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625}, -- NodeBox5
+				{-0.5, 0.375, -0.5, -0.40625, 0.5625, -0.4375}, -- NodeBox6
+				{0.40625, 0.375, -0.5, 0.5, 0.5625, -0.4375}, -- NodeBox7
+				{-0.4375, -0.375, -0.4375, 0.4375, -0.1875, -0.375}, -- NodeBox8
+				{-0.4375, -0.25, -0.375, 0.4375, -0.0625, -0.3125}, -- NodeBox9
+				{-0.4375, -0.125, -0.3125, 0.4375, 0.0625, -0.25}, -- NodeBox10
+				{-0.4375, 0, -0.25, 0.4375, 0.1875, -0.1875}, -- NodeBox11
+				{-0.4375, 0.125, -0.1875, 0.4375, 0.3125, -0.125}, -- NodeBox12
+				{-0.4375, 0.25, -0.125, 0.4375, 0.4375, -0.0625}, -- NodeBox13
+				{-0.4375, 0.375, -0.0625, 0.4375, 0.5625, 0}, -- NodeBox14
+				{-0.4375, 0.5, 0, 0.4375, 0.6875, 0.0625}, -- NodeBox15
+				{-0.4375, 0.625, 0.0625, 0.4375, 0.8125, 0.125}, -- NodeBox16
+				{-0.4375, 0.75, 0.125, 0.4375, 0.9375, 0.1875}, -- NodeBox17
+				{-0.4375, 0.875, 0.1875, 0.4375, 1.0625, 0.25}, -- NodeBox18
+				{-0.4375, 1, 0.25, 0.4375, 1.1875, 0.3125}, -- NodeBox19
+				{-0.4375, 1.125, 0.3125, 0.4375, 1.3125, 0.375}, -- NodeBox20
+				{-0.5, 0.5, -0.4375, -0.40625, 0.6875, -0.375}, -- NodeBox21
+				{-0.5, 0.625, -0.375, -0.40625, 0.8125, -0.3125}, -- NodeBox22
+				{-0.5, 0.75, -0.3125, -0.40625, 0.9375, -0.25}, -- NodeBox23
+				{-0.5, 0.875, -0.25, -0.40625, 1.0625, -0.1875}, -- NodeBox24
+				{-0.5, 1, -0.1875, -0.40625, 1.1875, -0.125}, -- NodeBox25
+				{-0.5, 1.125, -0.125, -0.40625, 1.3125, -0.0625}, -- NodeBox26
+				{-0.5, 1.25, -0.0625, -0.40625, 1.4375, 0}, -- NodeBox27
+				{-0.5, 1.375, 0, -0.40625, 1.5625, 0.0625}, -- NodeBox28
+				{-0.5, 1.5, 0.0625, -0.40625, 1.6875, 0.125}, -- NodeBox29
+				{-0.5, 1.625, 0.125, -0.40625, 1.8125, 0.1875}, -- NodeBox30
+				{-0.5, 1.75, 0.1875, -0.40625, 1.9375, 0.25}, -- NodeBox31
+				{-0.5, 1.875, 0.25, -0.40625, 2.0625, 0.3125}, -- NodeBox32
+				{-0.5, 2, 0.3125, -0.40625, 2.1875, 0.375}, -- NodeBox33
+				{0.40625, 0.5, -0.4375, 0.5, 0.6875, -0.375}, -- NodeBox34
+				{0.40625, 0.625, -0.375, 0.5, 0.8125, -0.3125}, -- NodeBox35
+				{0.40625, 0.75, -0.3125, 0.5, 0.9375, -0.25}, -- NodeBox36
+				{0.40625, 0.875, -0.25, 0.5, 1.0625, -0.1875}, -- NodeBox37
+				{0.40625, 1, -0.1875, 0.5, 1.1875, -0.125}, -- NodeBox38
+				{0.40625, 1.125, -0.125, 0.5, 1.3125, -0.0625}, -- NodeBox39
+				{0.40625, 1.25, -0.0625, 0.5, 1.4375, 0}, -- NodeBox40
+				{0.40625, 1.375, 0, 0.5, 1.5625, 0.0625}, -- NodeBox41
+				{0.40625, 1.5, 0.0625, 0.5, 1.6875, 0.125}, -- NodeBox42
+				{0.40625, 1.625, 0.125, 0.5, 1.8125, 0.1875}, -- NodeBox43
+				{0.40625, 1.75, 0.1875, 0.5, 1.9375, 0.25}, -- NodeBox44
+				{0.40625, 1.875, 0.25, 0.5, 2.0625, 0.3125}, -- NodeBox45
+				{0.40625, 2, 0.3125, 0.5, 2.1875, 0.375}, -- NodeBox46
+			},
 		},
-	},
-	selection_box = {
-		type = "fixed",
-        fixed = {
-			{-0.5, -0.5, -0.5, 0.5, 2.1875, 0.5},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 2.1875, 0.5},
+			},
 		},
-    },
-	on_rightclick = function(pos, node)
-		minetest.set_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
-	end,
-	drop = "bridger:large_drawbridge_normal",
-	groups = {choppy=3, not_in_creative_inventory=1},
-	sounds = default.node_sound_wood_defaults(),
-	mesecons = {effector = {
-		action_off = function (pos, node)
-			minetest.swap_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
 		end,
-	}},
-	on_blast = mesecon.on_blastnode,
-})
+		drop = "bridger:large_drawbridge_normal",
+		groups = {choppy=3, not_in_creative_inventory=1},
+		sounds = default.node_sound_wood_defaults(),
+		mesecons = {effector = {
+			action_off = function (pos, node)
+				minetest.swap_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
+			end,
+		}},
+		on_blast = mesecon.on_blastnode,
+	})
+else
+	minetest.register_node("bridger:large_beam_swivel_normal", {
+		description = "Large Wooden Swivel Bridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -1.5, 0.4375, -0.4375, 1.5}, -- NodeBox1
+				{0.40625, -0.5, -0.6875, 0.5, 0.5, -0.59375}, -- NodeBox2
+				{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875}, -- NodeBox3
+				{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875}, -- NodeBox4
+				{-0.5, -0.5, -0.6875, -0.40625, 0.5, -0.59375}, -- NodeBox5
+				{-0.5, 0.375, -1.5, -0.40625, 0.4375, 1.5}, -- NodeBox6
+				{0.40625, 0.375, -1.5, 0.5, 0.4375, 1.5}, -- NodeBox7
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -1.5, 0.5, 0.5, 1.5},
+			},
+		},
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
+		end,
+		groups = {choppy=3},
+		sounds = default.node_sound_wood_defaults(),
+	})
+
+	minetest.register_node("bridger:large_beam_swivel_open", {
+		description = "Large Wooden Swivel Bridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png^[transformR90"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-1.5, -0.5, -0.4375, 1.5, -0.4375, 0.4375}, -- NodeBox1
+				{-0.6875, -0.5, -0.5, -0.59375, 0.5, -0.40625}, -- NodeBox2
+				{0.59375, -0.5, -0.5, 0.6875, 0.5, -0.40625}, -- NodeBox3
+				{0.59375, -0.5, 0.40625, 0.6875, 0.5, 0.5}, -- NodeBox4
+				{-0.6875, -0.5, 0.40625, -0.59375, 0.5, 0.5}, -- NodeBox5
+				{-1.5, 0.375, 0.40625, 1.5, 0.4375, 0.5}, -- NodeBox6
+				{-1.5, 0.375, -0.5, 1.5, 0.4375, -0.40625}, -- NodeBox7
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-1.5, -0.5, -0.5, 1.5, 0.5, 0.5},
+			},
+		},
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
+		end,
+		drop = "bridger:large_beam_swivel_normal",
+		groups = {choppy=3, not_in_creative_inventory=1},
+		sounds = default.node_sound_wood_defaults(),
+	})
+
+	minetest.register_node("bridger:large_drawbridge_normal", {
+		description = "Large Wooden Drawbridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -0.5, 0.4375, -0.4375, 1.5}, -- NodeBox1
+				{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625}, -- NodeBox2
+				{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875}, -- NodeBox3
+				{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875}, -- NodeBox4
+				{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625}, -- NodeBox5
+				{-0.5, 0.375, -0.5, -0.40625, 0.4375, 1.5}, -- NodeBox6
+				{0.40625, 0.375, -0.5, 0.5, 0.4375, 1.5}, -- NodeBox7
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 0.5, 1.5},
+			},
+		},
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
+		end,
+		groups = {choppy=3},
+		sounds = default.node_sound_wood_defaults(),
+	})
+
+	minetest.register_node("bridger:large_drawbridge_open", {
+		description = "Large Wooden Drawbridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -0.5, 0.4375, -0.3125, -0.4375}, -- NodeBox1
+				{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625}, -- NodeBox2
+				{0.40625, 0.875, 0.15625, 0.5, 2.125, 0.25}, -- NodeBox3
+				{-0.5, 0.875, 0.15625, -0.40625, 2.125, 0.25}, -- NodeBox4
+				{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625}, -- NodeBox5
+				{-0.5, 0.375, -0.5, -0.40625, 0.5625, -0.4375}, -- NodeBox6
+				{0.40625, 0.375, -0.5, 0.5, 0.5625, -0.4375}, -- NodeBox7
+				{-0.4375, -0.375, -0.4375, 0.4375, -0.1875, -0.375}, -- NodeBox8
+				{-0.4375, -0.25, -0.375, 0.4375, -0.0625, -0.3125}, -- NodeBox9
+				{-0.4375, -0.125, -0.3125, 0.4375, 0.0625, -0.25}, -- NodeBox10
+				{-0.4375, 0, -0.25, 0.4375, 0.1875, -0.1875}, -- NodeBox11
+				{-0.4375, 0.125, -0.1875, 0.4375, 0.3125, -0.125}, -- NodeBox12
+				{-0.4375, 0.25, -0.125, 0.4375, 0.4375, -0.0625}, -- NodeBox13
+				{-0.4375, 0.375, -0.0625, 0.4375, 0.5625, 0}, -- NodeBox14
+				{-0.4375, 0.5, 0, 0.4375, 0.6875, 0.0625}, -- NodeBox15
+				{-0.4375, 0.625, 0.0625, 0.4375, 0.8125, 0.125}, -- NodeBox16
+				{-0.4375, 0.75, 0.125, 0.4375, 0.9375, 0.1875}, -- NodeBox17
+				{-0.4375, 0.875, 0.1875, 0.4375, 1.0625, 0.25}, -- NodeBox18
+				{-0.4375, 1, 0.25, 0.4375, 1.1875, 0.3125}, -- NodeBox19
+				{-0.4375, 1.125, 0.3125, 0.4375, 1.3125, 0.375}, -- NodeBox20
+				{-0.5, 0.5, -0.4375, -0.40625, 0.6875, -0.375}, -- NodeBox21
+				{-0.5, 0.625, -0.375, -0.40625, 0.8125, -0.3125}, -- NodeBox22
+				{-0.5, 0.75, -0.3125, -0.40625, 0.9375, -0.25}, -- NodeBox23
+				{-0.5, 0.875, -0.25, -0.40625, 1.0625, -0.1875}, -- NodeBox24
+				{-0.5, 1, -0.1875, -0.40625, 1.1875, -0.125}, -- NodeBox25
+				{-0.5, 1.125, -0.125, -0.40625, 1.3125, -0.0625}, -- NodeBox26
+				{-0.5, 1.25, -0.0625, -0.40625, 1.4375, 0}, -- NodeBox27
+				{-0.5, 1.375, 0, -0.40625, 1.5625, 0.0625}, -- NodeBox28
+				{-0.5, 1.5, 0.0625, -0.40625, 1.6875, 0.125}, -- NodeBox29
+				{-0.5, 1.625, 0.125, -0.40625, 1.8125, 0.1875}, -- NodeBox30
+				{-0.5, 1.75, 0.1875, -0.40625, 1.9375, 0.25}, -- NodeBox31
+				{-0.5, 1.875, 0.25, -0.40625, 2.0625, 0.3125}, -- NodeBox32
+				{-0.5, 2, 0.3125, -0.40625, 2.1875, 0.375}, -- NodeBox33
+				{0.40625, 0.5, -0.4375, 0.5, 0.6875, -0.375}, -- NodeBox34
+				{0.40625, 0.625, -0.375, 0.5, 0.8125, -0.3125}, -- NodeBox35
+				{0.40625, 0.75, -0.3125, 0.5, 0.9375, -0.25}, -- NodeBox36
+				{0.40625, 0.875, -0.25, 0.5, 1.0625, -0.1875}, -- NodeBox37
+				{0.40625, 1, -0.1875, 0.5, 1.1875, -0.125}, -- NodeBox38
+				{0.40625, 1.125, -0.125, 0.5, 1.3125, -0.0625}, -- NodeBox39
+				{0.40625, 1.25, -0.0625, 0.5, 1.4375, 0}, -- NodeBox40
+				{0.40625, 1.375, 0, 0.5, 1.5625, 0.0625}, -- NodeBox41
+				{0.40625, 1.5, 0.0625, 0.5, 1.6875, 0.125}, -- NodeBox42
+				{0.40625, 1.625, 0.125, 0.5, 1.8125, 0.1875}, -- NodeBox43
+				{0.40625, 1.75, 0.1875, 0.5, 1.9375, 0.25}, -- NodeBox44
+				{0.40625, 1.875, 0.25, 0.5, 2.0625, 0.3125}, -- NodeBox45
+				{0.40625, 2, 0.3125, 0.5, 2.1875, 0.375}, -- NodeBox46
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 2.1875, 0.5},
+			},
+		},
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
+		end,
+		drop = "bridger:large_drawbridge_normal",
+		groups = {choppy=3, not_in_creative_inventory=1},
+		sounds = default.node_sound_wood_defaults(),
+	})
+end
 
 minetest.register_node("bridger:deck_wood", {
 	description = "Wooden Deck",
