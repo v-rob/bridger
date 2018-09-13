@@ -1,3 +1,15 @@
-#Setting of Bridger
+#    Bridger Settings
 
-Bridger_enable_alias	(For use old alias of Bridges)		bool false
+#    Enable aliasing for old worlds using Bridger.
+Bridger_enable_alias (Use compatability aliasing) bool false
+
+#    Enable wooden footbridges and drawbridges. This setting does not include
+#    trestles.
+bridger_enable_wooden_bridges (Enable wooden bridges) bool true
+
+#    Enable wooden trestle bridge components.
+bridger_enable_trestles (Enable trestles) bool true
+
+#    Enable metal truss bridges (Tubular, truss supports, substructure,
+#    superstructure, chords, deck, etc.)  Also enables concrete supports.
+bridger_enable_trusses (Enable metal trusses) bool true
