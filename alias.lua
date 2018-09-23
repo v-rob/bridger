@@ -19,6 +19,7 @@ for _, color in pairs(bridger_colors) do
 	end
 	
 	local bridger_error1 = {
+		"block_",
 		"step_",
 		"suspension_top_",
 		"suspension_cable_",
