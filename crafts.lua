@@ -935,6 +935,15 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges") then
 	})
 
 	minetest.register_craft({
+		output = 'bridger:small_beam_corner',
+		recipe = {
+			{'bridger:bridges_wooden_rod','bridger:bridges_wooden_rod','bridger:bridges_wooden_rod'},
+			{'bridger:bridges_wooden_rod','',''},
+			{'','','group:wood'},
+		}
+	})
+
+	minetest.register_craft({
 		output = 'bridger:small_beam_3',
 		recipe = {
 			{'bridger:bridges_wooden_rod','','bridger:bridges_wooden_rod'},
