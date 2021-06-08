@@ -4178,6 +4178,36 @@ if not minetest.settings:get_bool("bridger_disable_wooden_bridges") then
 		sounds = default.node_sound_wood_defaults(),
 	})
 
+	minetest.register_node("bridger:small_beam_corner", {
+		description = "Small Wooden Beam Bridge Corner",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -0.5, 0.4375, -0.4375, 0.4375}, -- NodeBox1
+				{-0.5, -0.5, 0.40625, -0.40625, 0.5, 0.5}, -- NodeBox2
+				{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625}, -- NodeBox3
+--				{-0.5, 0.375, -0.5, -0.40625, 0.4375, 0.5}, -- NodeBox4
+				{0.40625, 0.375, -0.5, 0.5, 0.4375, 0.5}, -- NodeBox5
+				{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625}, -- NodeBox6
+				{0.40625, -0.5, 0.40625, 0.5, 0.5, 0.5}, -- NodeBox7
+				{-0.5, 0.375, 0.40625, 0.5, 0.4375, 0.5}, -- NodeBox8
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+			},
+		},
+		groups = {choppy=3},
+		sounds = default.node_sound_wood_defaults(),
+	})
+
 	minetest.register_node("bridger:small_beam_3", {
 		description = "Small Wooden Beam Bridge Crossing",
 		drawtype = "nodebox",
