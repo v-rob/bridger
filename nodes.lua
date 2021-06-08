@@ -4451,368 +4451,202 @@ if not minetest.settings:get_bool("bridger_disable_wooden_bridges") then
 		sounds = default.node_sound_wood_defaults(),
 	})
 
+	local mesecon_on_blastnode = nil
 	if minetest.get_modpath("mesecons") then
-		minetest.register_node("bridger:large_beam_swivel_normal", {
-			description = "Large Wooden Swivel Bridge",
-			drawtype = "nodebox",
-			tiles = {"default_wood.png"},
-			paramtype = "light",
-			paramtype2 = "facedir",
-			sunlight_propagates = true,
-			node_box = {
-				type = "fixed",
-				fixed = {
-					{-0.4375, -0.5, -1.5, 0.4375, -0.4375, 1.5},
-					{0.40625, -0.5, -0.6875, 0.5, 0.5, -0.59375},
-					{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875},
-					{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875},
-					{-0.5, -0.5, -0.6875, -0.40625, 0.5, -0.59375},
-					{-0.5, 0.375, -1.5, -0.40625, 0.4375, 1.5},
-					{0.40625, 0.375, -1.5, 0.5, 0.4375, 1.5},
-				},
-			},
-			selection_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, -1.5, 0.5, 0.5, 1.5},
-				},
-			},
-			on_rightclick = function(pos, node)
-				minetest.set_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
-			end,
-			groups = {choppy=3},
-			sounds = default.node_sound_wood_defaults(),
-			mesecons = {effector = {
-				action_on = function (pos, node)
-					minetest.swap_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
-				end,
-			}},
-			on_blast = mesecon.on_blastnode,
-		})
-
-		minetest.register_node("bridger:large_beam_swivel_open", {
-			description = "Large Wooden Swivel Bridge",
-			drawtype = "nodebox",
-			tiles = {"default_wood.png^[transformR90"},
-			paramtype = "light",
-			paramtype2 = "facedir",
-			sunlight_propagates = true,
-			node_box = {
-				type = "fixed",
-				fixed = {
-					{-1.5, -0.5, -0.4375, 1.5, -0.4375, 0.4375},
-					{-0.6875, -0.5, -0.5, -0.59375, 0.5, -0.40625},
-					{0.59375, -0.5, -0.5, 0.6875, 0.5, -0.40625},
-					{0.59375, -0.5, 0.40625, 0.6875, 0.5, 0.5},
-					{-0.6875, -0.5, 0.40625, -0.59375, 0.5, 0.5},
-					{-1.5, 0.375, 0.40625, 1.5, 0.4375, 0.5},
-					{-1.5, 0.375, -0.5, 1.5, 0.4375, -0.40625},
-				},
-			},
-			selection_box = {
-				type = "fixed",
-				fixed = {
-					{-1.5, -0.5, -0.5, 1.5, 0.5, 0.5},
-				},
-			},
-			on_rightclick = function(pos, node)
-				minetest.set_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
-			end,
-			drop = "bridger:large_beam_swivel_normal",
-			groups = {choppy=3, not_in_creative_inventory=1},
-			sounds = default.node_sound_wood_defaults(),
-			mesecons = {effector = {
-				action_off = function (pos, node)
-					minetest.swap_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
-				end,
-			}},
-			on_blast = mesecon.on_blastnode,
-		})
-
-		minetest.register_node("bridger:large_drawbridge_normal", {
-			description = "Large Wooden Drawbridge",
-			drawtype = "nodebox",
-			tiles = {"default_wood.png"},
-			paramtype = "light",
-			paramtype2 = "facedir",
-			sunlight_propagates = true,
-			node_box = {
-				type = "fixed",
-				fixed = {
-					{-0.4375, -0.5, -0.5, 0.4375, -0.4375, 1.5},
-					{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625},
-					{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875},
-					{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875},
-					{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625},
-					{-0.5, 0.375, -0.5, -0.40625, 0.4375, 1.5},
-					{0.40625, 0.375, -0.5, 0.5, 0.4375, 1.5},
-				},
-			},
-			selection_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, -0.5, 0.5, 0.5, 1.5},
-				},
-			},
-			on_rightclick = function(pos, node)
-				minetest.set_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
-			end,
-			groups = {choppy=3},
-			sounds = default.node_sound_wood_defaults(),
-			mesecons = {effector = {
-				action_on = function (pos, node)
-					minetest.swap_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
-				end,
-			}},
-		})
-
-		minetest.register_node("bridger:large_drawbridge_open", {
-			description = "Large Wooden Drawbridge",
-			drawtype = "nodebox",
-			tiles = {"default_wood.png"},
-			paramtype = "light",
-			paramtype2 = "facedir",
-			sunlight_propagates = true,
-			node_box = {
-				type = "fixed",
-				fixed = {
-					{-0.4375, -0.5, -0.5, 0.4375, -0.3125, -0.4375},
-					{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625},
-					{0.40625, 0.875, 0.15625, 0.5, 2.125, 0.25},
-					{-0.5, 0.875, 0.15625, -0.40625, 2.125, 0.25},
-					{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625},
-					{-0.5, 0.375, -0.5, -0.40625, 0.5625, -0.4375},
-					{0.40625, 0.375, -0.5, 0.5, 0.5625, -0.4375},
-					{-0.4375, -0.375, -0.4375, 0.4375, -0.1875, -0.375},
-					{-0.4375, -0.25, -0.375, 0.4375, -0.0625, -0.3125},
-					{-0.4375, -0.125, -0.3125, 0.4375, 0.0625, -0.25},
-					{-0.4375, 0, -0.25, 0.4375, 0.1875, -0.1875},
-					{-0.4375, 0.125, -0.1875, 0.4375, 0.3125, -0.125},
-					{-0.4375, 0.25, -0.125, 0.4375, 0.4375, -0.0625},
-					{-0.4375, 0.375, -0.0625, 0.4375, 0.5625, 0},
-					{-0.4375, 0.5, 0, 0.4375, 0.6875, 0.0625},
-					{-0.4375, 0.625, 0.0625, 0.4375, 0.8125, 0.125},
-					{-0.4375, 0.75, 0.125, 0.4375, 0.9375, 0.1875},
-					{-0.4375, 0.875, 0.1875, 0.4375, 1.0625, 0.25},
-					{-0.4375, 1, 0.25, 0.4375, 1.1875, 0.3125},
-					{-0.4375, 1.125, 0.3125, 0.4375, 1.3125, 0.375},
-					{-0.5, 0.5, -0.4375, -0.40625, 0.6875, -0.375},
-					{-0.5, 0.625, -0.375, -0.40625, 0.8125, -0.3125},
-					{-0.5, 0.75, -0.3125, -0.40625, 0.9375, -0.25},
-					{-0.5, 0.875, -0.25, -0.40625, 1.0625, -0.1875},
-					{-0.5, 1, -0.1875, -0.40625, 1.1875, -0.125},
-					{-0.5, 1.125, -0.125, -0.40625, 1.3125, -0.0625},
-					{-0.5, 1.25, -0.0625, -0.40625, 1.4375, 0},
-					{-0.5, 1.375, 0, -0.40625, 1.5625, 0.0625},
-					{-0.5, 1.5, 0.0625, -0.40625, 1.6875, 0.125},
-					{-0.5, 1.625, 0.125, -0.40625, 1.8125, 0.1875},
-					{-0.5, 1.75, 0.1875, -0.40625, 1.9375, 0.25},
-					{-0.5, 1.875, 0.25, -0.40625, 2.0625, 0.3125},
-					{-0.5, 2, 0.3125, -0.40625, 2.1875, 0.375},
-					{0.40625, 0.5, -0.4375, 0.5, 0.6875, -0.375},
-					{0.40625, 0.625, -0.375, 0.5, 0.8125, -0.3125},
-					{0.40625, 0.75, -0.3125, 0.5, 0.9375, -0.25},
-					{0.40625, 0.875, -0.25, 0.5, 1.0625, -0.1875},
-					{0.40625, 1, -0.1875, 0.5, 1.1875, -0.125},
-					{0.40625, 1.125, -0.125, 0.5, 1.3125, -0.0625},
-					{0.40625, 1.25, -0.0625, 0.5, 1.4375, 0},
-					{0.40625, 1.375, 0, 0.5, 1.5625, 0.0625},
-					{0.40625, 1.5, 0.0625, 0.5, 1.6875, 0.125},
-					{0.40625, 1.625, 0.125, 0.5, 1.8125, 0.1875},
-					{0.40625, 1.75, 0.1875, 0.5, 1.9375, 0.25},
-					{0.40625, 1.875, 0.25, 0.5, 2.0625, 0.3125},
-					{0.40625, 2, 0.3125, 0.5, 2.1875, 0.375},
-				},
-			},
-			selection_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, -0.5, 0.5, 2.1875, 0.5},
-				},
-			},
-			on_rightclick = function(pos, node)
-				minetest.set_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
-			end,
-			drop = "bridger:large_drawbridge_normal",
-			groups = {choppy=3, not_in_creative_inventory=1},
-			sounds = default.node_sound_wood_defaults(),
-			mesecons = {effector = {
-				action_off = function (pos, node)
-					minetest.swap_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
-				end,
-			}},
-			on_blast = mesecon.on_blastnode,
-		})
-	else
-		minetest.register_node("bridger:large_beam_swivel_normal", {
-			description = "Large Wooden Swivel Bridge",
-			drawtype = "nodebox",
-			tiles = {"default_wood.png"},
-			paramtype = "light",
-			paramtype2 = "facedir",
-			sunlight_propagates = true,
-			node_box = {
-				type = "fixed",
-				fixed = {
-					{-0.4375, -0.5, -1.5, 0.4375, -0.4375, 1.5},
-					{0.40625, -0.5, -0.6875, 0.5, 0.5, -0.59375},
-					{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875},
-					{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875},
-					{-0.5, -0.5, -0.6875, -0.40625, 0.5, -0.59375},
-					{-0.5, 0.375, -1.5, -0.40625, 0.4375, 1.5},
-					{0.40625, 0.375, -1.5, 0.5, 0.4375, 1.5},
-				},
-			},
-			selection_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, -1.5, 0.5, 0.5, 1.5},
-				},
-			},
-			on_rightclick = function(pos, node)
-				minetest.set_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
-			end,
-			groups = {choppy=3},
-			sounds = default.node_sound_wood_defaults(),
-		})
-
-		minetest.register_node("bridger:large_beam_swivel_open", {
-			description = "Large Wooden Swivel Bridge",
-			drawtype = "nodebox",
-			tiles = {"default_wood.png^[transformR90"},
-			paramtype = "light",
-			paramtype2 = "facedir",
-			sunlight_propagates = true,
-			node_box = {
-				type = "fixed",
-				fixed = {
-					{-1.5, -0.5, -0.4375, 1.5, -0.4375, 0.4375},
-					{-0.6875, -0.5, -0.5, -0.59375, 0.5, -0.40625},
-					{0.59375, -0.5, -0.5, 0.6875, 0.5, -0.40625},
-					{0.59375, -0.5, 0.40625, 0.6875, 0.5, 0.5},
-					{-0.6875, -0.5, 0.40625, -0.59375, 0.5, 0.5},
-					{-1.5, 0.375, 0.40625, 1.5, 0.4375, 0.5},
-					{-1.5, 0.375, -0.5, 1.5, 0.4375, -0.40625},
-				},
-			},
-			selection_box = {
-				type = "fixed",
-				fixed = {
-					{-1.5, -0.5, -0.5, 1.5, 0.5, 0.5},
-				},
-			},
-			on_rightclick = function(pos, node)
-				minetest.set_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
-			end,
-			drop = "bridger:large_beam_swivel_normal",
-			groups = {choppy=3, not_in_creative_inventory=1},
-			sounds = default.node_sound_wood_defaults(),
-		})
-
-		minetest.register_node("bridger:large_drawbridge_normal", {
-			description = "Large Wooden Drawbridge",
-			drawtype = "nodebox",
-			tiles = {"default_wood.png"},
-			paramtype = "light",
-			paramtype2 = "facedir",
-			sunlight_propagates = true,
-			node_box = {
-				type = "fixed",
-				fixed = {
-					{-0.4375, -0.5, -0.5, 0.4375, -0.4375, 1.5},
-					{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625},
-					{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875},
-					{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875},
-					{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625},
-					{-0.5, 0.375, -0.5, -0.40625, 0.4375, 1.5},
-					{0.40625, 0.375, -0.5, 0.5, 0.4375, 1.5},
-				},
-			},
-			selection_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, -0.5, 0.5, 0.5, 1.5},
-				},
-			},
-			on_rightclick = function(pos, node)
-				minetest.set_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
-			end,
-			groups = {choppy=3},
-			sounds = default.node_sound_wood_defaults(),
-		})
-
-		minetest.register_node("bridger:large_drawbridge_open", {
-			description = "Large Wooden Drawbridge",
-			drawtype = "nodebox",
-			tiles = {"default_wood.png"},
-			paramtype = "light",
-			paramtype2 = "facedir",
-			sunlight_propagates = true,
-			node_box = {
-				type = "fixed",
-				fixed = {
-					{-0.4375, -0.5, -0.5, 0.4375, -0.3125, -0.4375},
-					{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625},
-					{0.40625, 0.875, 0.15625, 0.5, 2.125, 0.25},
-					{-0.5, 0.875, 0.15625, -0.40625, 2.125, 0.25},
-					{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625},
-					{-0.5, 0.375, -0.5, -0.40625, 0.5625, -0.4375},
-					{0.40625, 0.375, -0.5, 0.5, 0.5625, -0.4375},
-					{-0.4375, -0.375, -0.4375, 0.4375, -0.1875, -0.375},
-					{-0.4375, -0.25, -0.375, 0.4375, -0.0625, -0.3125},
-					{-0.4375, -0.125, -0.3125, 0.4375, 0.0625, -0.25},
-					{-0.4375, 0, -0.25, 0.4375, 0.1875, -0.1875},
-					{-0.4375, 0.125, -0.1875, 0.4375, 0.3125, -0.125},
-					{-0.4375, 0.25, -0.125, 0.4375, 0.4375, -0.0625},
-					{-0.4375, 0.375, -0.0625, 0.4375, 0.5625, 0},
-					{-0.4375, 0.5, 0, 0.4375, 0.6875, 0.0625},
-					{-0.4375, 0.625, 0.0625, 0.4375, 0.8125, 0.125},
-					{-0.4375, 0.75, 0.125, 0.4375, 0.9375, 0.1875},
-					{-0.4375, 0.875, 0.1875, 0.4375, 1.0625, 0.25},
-					{-0.4375, 1, 0.25, 0.4375, 1.1875, 0.3125},
-					{-0.4375, 1.125, 0.3125, 0.4375, 1.3125, 0.375},
-					{-0.5, 0.5, -0.4375, -0.40625, 0.6875, -0.375},
-					{-0.5, 0.625, -0.375, -0.40625, 0.8125, -0.3125},
-					{-0.5, 0.75, -0.3125, -0.40625, 0.9375, -0.25},
-					{-0.5, 0.875, -0.25, -0.40625, 1.0625, -0.1875},
-					{-0.5, 1, -0.1875, -0.40625, 1.1875, -0.125},
-					{-0.5, 1.125, -0.125, -0.40625, 1.3125, -0.0625},
-					{-0.5, 1.25, -0.0625, -0.40625, 1.4375, 0},
-					{-0.5, 1.375, 0, -0.40625, 1.5625, 0.0625},
-					{-0.5, 1.5, 0.0625, -0.40625, 1.6875, 0.125},
-					{-0.5, 1.625, 0.125, -0.40625, 1.8125, 0.1875},
-					{-0.5, 1.75, 0.1875, -0.40625, 1.9375, 0.25},
-					{-0.5, 1.875, 0.25, -0.40625, 2.0625, 0.3125},
-					{-0.5, 2, 0.3125, -0.40625, 2.1875, 0.375},
-					{0.40625, 0.5, -0.4375, 0.5, 0.6875, -0.375},
-					{0.40625, 0.625, -0.375, 0.5, 0.8125, -0.3125},
-					{0.40625, 0.75, -0.3125, 0.5, 0.9375, -0.25},
-					{0.40625, 0.875, -0.25, 0.5, 1.0625, -0.1875},
-					{0.40625, 1, -0.1875, 0.5, 1.1875, -0.125},
-					{0.40625, 1.125, -0.125, 0.5, 1.3125, -0.0625},
-					{0.40625, 1.25, -0.0625, 0.5, 1.4375, 0},
-					{0.40625, 1.375, 0, 0.5, 1.5625, 0.0625},
-					{0.40625, 1.5, 0.0625, 0.5, 1.6875, 0.125},
-					{0.40625, 1.625, 0.125, 0.5, 1.8125, 0.1875},
-					{0.40625, 1.75, 0.1875, 0.5, 1.9375, 0.25},
-					{0.40625, 1.875, 0.25, 0.5, 2.0625, 0.3125},
-					{0.40625, 2, 0.3125, 0.5, 2.1875, 0.375},
-				},
-			},
-			selection_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, -0.5, 0.5, 2.1875, 0.5},
-				},
-			},
-			on_rightclick = function(pos, node)
-				minetest.set_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
-			end,
-			drop = "bridger:large_drawbridge_normal",
-			groups = {choppy=3, not_in_creative_inventory=1},
-			sounds = default.node_sound_wood_defaults(),
-		})
+		mesecons_on_blastnode = mesecon.on_blastnode
 	end
+
+	minetest.register_node("bridger:large_beam_swivel_normal", {
+		description = "Large Wooden Swivel Bridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -1.5, 0.4375, -0.4375, 1.5},
+				{0.40625, -0.5, -0.6875, 0.5, 0.5, -0.59375},
+				{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875},
+				{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875},
+				{-0.5, -0.5, -0.6875, -0.40625, 0.5, -0.59375},
+				{-0.5, 0.375, -1.5, -0.40625, 0.4375, 1.5},
+				{0.40625, 0.375, -1.5, 0.5, 0.4375, 1.5},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -1.5, 0.5, 0.5, 1.5},
+			},
+		},
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
+		end,
+		groups = {choppy=3},
+		sounds = default.node_sound_wood_defaults(),
+		mesecons = {effector = {
+			action_on = function(pos, node)
+				minetest.swap_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
+			end,
+		}},
+		on_blast = mesecon_on_blastnode,
+	})
+
+	minetest.register_node("bridger:large_beam_swivel_open", {
+		description = "Large Wooden Swivel Bridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png^[transformR90"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-1.5, -0.5, -0.4375, 1.5, -0.4375, 0.4375},
+				{-0.6875, -0.5, -0.5, -0.59375, 0.5, -0.40625},
+				{0.59375, -0.5, -0.5, 0.6875, 0.5, -0.40625},
+				{0.59375, -0.5, 0.40625, 0.6875, 0.5, 0.5},
+				{-0.6875, -0.5, 0.40625, -0.59375, 0.5, 0.5},
+				{-1.5, 0.375, 0.40625, 1.5, 0.4375, 0.5},
+				{-1.5, 0.375, -0.5, 1.5, 0.4375, -0.40625},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-1.5, -0.5, -0.5, 1.5, 0.5, 0.5},
+			},
+		},
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
+		end,
+		drop = "bridger:large_beam_swivel_normal",
+		groups = {choppy=3, not_in_creative_inventory=1},
+		sounds = default.node_sound_wood_defaults(),
+		mesecons = {effector = {
+			action_off = function(pos, node)
+				minetest.swap_node(pos, {name = "bridger:large_beam_swivel_normal", param2 = node.param2})
+			end,
+		}},
+		on_blast = mesecon_on_blastnode,
+	})
+
+	minetest.register_node("bridger:large_drawbridge_normal", {
+		description = "Large Wooden Drawbridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -0.5, 0.4375, -0.4375, 1.5},
+				{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625},
+				{0.40625, -0.5, 0.59375, 0.5, 0.5, 0.6875},
+				{-0.5, -0.5, 0.59375, -0.40625, 0.5, 0.6875},
+				{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625},
+				{-0.5, 0.375, -0.5, -0.40625, 0.4375, 1.5},
+				{0.40625, 0.375, -0.5, 0.5, 0.4375, 1.5},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 0.5, 1.5},
+			},
+		},
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
+		end,
+		groups = {choppy=3},
+		sounds = default.node_sound_wood_defaults(),
+		mesecons = {effector = {
+			action_on = function(pos, node)
+				minetest.swap_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
+			end,
+		}},
+	})
+
+	minetest.register_node("bridger:large_drawbridge_open", {
+		description = "Large Wooden Drawbridge",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -0.5, 0.4375, -0.3125, -0.4375},
+				{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625},
+				{0.40625, 0.875, 0.15625, 0.5, 2.125, 0.25},
+				{-0.5, 0.875, 0.15625, -0.40625, 2.125, 0.25},
+				{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625},
+				{-0.5, 0.375, -0.5, -0.40625, 0.5625, -0.4375},
+				{0.40625, 0.375, -0.5, 0.5, 0.5625, -0.4375},
+				{-0.4375, -0.375, -0.4375, 0.4375, -0.1875, -0.375},
+				{-0.4375, -0.25, -0.375, 0.4375, -0.0625, -0.3125},
+				{-0.4375, -0.125, -0.3125, 0.4375, 0.0625, -0.25},
+				{-0.4375, 0, -0.25, 0.4375, 0.1875, -0.1875},
+				{-0.4375, 0.125, -0.1875, 0.4375, 0.3125, -0.125},
+				{-0.4375, 0.25, -0.125, 0.4375, 0.4375, -0.0625},
+				{-0.4375, 0.375, -0.0625, 0.4375, 0.5625, 0},
+				{-0.4375, 0.5, 0, 0.4375, 0.6875, 0.0625},
+				{-0.4375, 0.625, 0.0625, 0.4375, 0.8125, 0.125},
+				{-0.4375, 0.75, 0.125, 0.4375, 0.9375, 0.1875},
+				{-0.4375, 0.875, 0.1875, 0.4375, 1.0625, 0.25},
+				{-0.4375, 1, 0.25, 0.4375, 1.1875, 0.3125},
+				{-0.4375, 1.125, 0.3125, 0.4375, 1.3125, 0.375},
+				{-0.5, 0.5, -0.4375, -0.40625, 0.6875, -0.375},
+				{-0.5, 0.625, -0.375, -0.40625, 0.8125, -0.3125},
+				{-0.5, 0.75, -0.3125, -0.40625, 0.9375, -0.25},
+				{-0.5, 0.875, -0.25, -0.40625, 1.0625, -0.1875},
+				{-0.5, 1, -0.1875, -0.40625, 1.1875, -0.125},
+				{-0.5, 1.125, -0.125, -0.40625, 1.3125, -0.0625},
+				{-0.5, 1.25, -0.0625, -0.40625, 1.4375, 0},
+				{-0.5, 1.375, 0, -0.40625, 1.5625, 0.0625},
+				{-0.5, 1.5, 0.0625, -0.40625, 1.6875, 0.125},
+				{-0.5, 1.625, 0.125, -0.40625, 1.8125, 0.1875},
+				{-0.5, 1.75, 0.1875, -0.40625, 1.9375, 0.25},
+				{-0.5, 1.875, 0.25, -0.40625, 2.0625, 0.3125},
+				{-0.5, 2, 0.3125, -0.40625, 2.1875, 0.375},
+				{0.40625, 0.5, -0.4375, 0.5, 0.6875, -0.375},
+				{0.40625, 0.625, -0.375, 0.5, 0.8125, -0.3125},
+				{0.40625, 0.75, -0.3125, 0.5, 0.9375, -0.25},
+				{0.40625, 0.875, -0.25, 0.5, 1.0625, -0.1875},
+				{0.40625, 1, -0.1875, 0.5, 1.1875, -0.125},
+				{0.40625, 1.125, -0.125, 0.5, 1.3125, -0.0625},
+				{0.40625, 1.25, -0.0625, 0.5, 1.4375, 0},
+				{0.40625, 1.375, 0, 0.5, 1.5625, 0.0625},
+				{0.40625, 1.5, 0.0625, 0.5, 1.6875, 0.125},
+				{0.40625, 1.625, 0.125, 0.5, 1.8125, 0.1875},
+				{0.40625, 1.75, 0.1875, 0.5, 1.9375, 0.25},
+				{0.40625, 1.875, 0.25, 0.5, 2.0625, 0.3125},
+				{0.40625, 2, 0.3125, 0.5, 2.1875, 0.375},
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 2.1875, 0.5},
+			},
+		},
+		on_rightclick = function(pos, node)
+			minetest.set_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
+		end,
+		drop = "bridger:large_drawbridge_normal",
+		groups = {choppy=3, not_in_creative_inventory=1},
+		sounds = default.node_sound_wood_defaults(),
+		mesecons = {effector = {
+			action_off = function(pos, node)
+				minetest.swap_node(pos, {name = "bridger:large_drawbridge_normal", param2 = node.param2})
+			end,
+		}},
+		on_blast = mesecon_on_blastnode,
+	})
 
 	minetest.register_node("bridger:deck_wood", {
 		description = "Wooden Deck",
