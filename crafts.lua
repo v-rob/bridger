@@ -55,7 +55,7 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			{'bridger:bridges_steel_rod','',''},
 		}
 	})
-	
+
 	minetest.register_craft({
 		output = 'bridger:train_deck_white',
 		type = 'shapeless',
@@ -930,6 +930,15 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges") then
 		recipe = {
 			{'bridger:bridges_wooden_rod','bridger:bridges_wooden_rod','bridger:bridges_wooden_rod'},
 			{'bridger:bridges_wooden_rod','','bridger:bridges_wooden_rod'},
+			{'','group:wood',''},
+		}
+	})
+
+	minetest.register_craft({
+		output = 'bridger:small_beam_corner',
+		recipe = {
+			{'bridger:bridges_wooden_rod','bridger:bridges_wooden_rod','bridger:bridges_wooden_rod'},
+			{'bridger:bridges_wooden_rod','',''},
 			{'','group:wood',''},
 		}
 	})

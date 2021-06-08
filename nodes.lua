@@ -24,7 +24,7 @@ local function rotate_and_place(itemstack, placer, pointed_thing)
 end
 
 if not minetest.settings:get_bool("bridger_disable_trusses") then
-	
+
 	local bridge_colors = {
 		{"Green", "green"},
 		{"Red", "red"},
@@ -78,7 +78,7 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 				groups = {cracky=3},
 				sounds = default.node_sound_metal_defaults(),
 			})
-			
+
 			minetest.register_alias("bridger:step_"..bridge_colors, "bridger:panel_block_"..bridge_colors)
 		elseif minetest.get_modpath("stairs") then
 			stairs.register_stair_and_slab(
@@ -998,7 +998,7 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 					{1.1875, 0.25, 0.375, 1.3125, 0.4375, 0.5}, -- NodeBox31
 					{1.25, 0.125, 0.375, 1.375, 0.3125, 0.5}, -- NodeBox32
 					{1.3125, 0.0625, 0.375, 1.4375, 0.1875, 0.5}, -- NodeBox33
-					
+
 				},
 			},
 			selection_box = {
@@ -1132,7 +1132,7 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 					{-0.5, 0, 0.375, -0.375, 0.125, 0.5}, -- NodeBox248
 					{1.375, 2.3125, 0.375, 1.5, 2.4375, 0.5}, -- NodeBox249
 					{-0.5, 2.3125, 0.375, -0.375, 2.4375, 0.5},
-					
+
 				},
 			},
 			selection_box = {
@@ -4163,6 +4163,35 @@ if not minetest.settings:get_bool("bridger_disable_wooden_bridges") then
 				{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625}, -- NodeBox3
 				{-0.5, 0.375, -0.5, -0.40625, 0.4375, 0.5}, -- NodeBox4
 				{0.40625, 0.375, -0.5, 0.5, 0.4375, 0.5}, -- NodeBox5
+				{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625}, -- NodeBox6
+				{0.40625, -0.5, 0.40625, 0.5, 0.5, 0.5}, -- NodeBox7
+				{-0.5, 0.375, 0.40625, 0.5, 0.4375, 0.5}, -- NodeBox8
+			},
+		},
+		selection_box = {
+			type = "fixed",
+			fixed = {
+				{-0.5, -0.5, -0.5, 0.5, 0.5, 0.5},
+			},
+		},
+		groups = {choppy=3},
+		sounds = default.node_sound_wood_defaults(),
+	})
+
+	minetest.register_node("bridger:small_beam_corner", {
+		description = "Small Wooden Beam Bridge Corner",
+		drawtype = "nodebox",
+		tiles = {"default_wood.png"},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		node_box = {
+			type = "fixed",
+			fixed = {
+				{-0.4375, -0.5, -0.5, 0.5, -0.4375, 0.4375}, -- NodeBox1
+				{-0.5, -0.5, 0.40625, -0.40625, 0.5, 0.5}, -- NodeBox2
+				{-0.5, -0.5, -0.5, -0.40625, 0.5, -0.40625}, -- NodeBox3
+				{-0.5, 0.375, -0.5, -0.40625, 0.4375, 0.5}, -- NodeBox4
 				{0.40625, -0.5, -0.5, 0.5, 0.5, -0.40625}, -- NodeBox6
 				{0.40625, -0.5, 0.40625, 0.5, 0.5, 0.5}, -- NodeBox7
 				{-0.5, 0.375, 0.40625, 0.5, 0.4375, 0.5}, -- NodeBox8
