@@ -61,39 +61,39 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_stone_defaults(),
 		})
 
-		minetest.register_node("bridger:block_"..bridge_colors, {
-			description = bridge_desc.." Block",
+		minetest.register_node("bridger:block_" .. bridge_colors, {
+			description = bridge_desc .. " Block",
 			drawtype = "normal",
-			tiles = {"bridges_"..bridge_colors..".png"},
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
 			paramtype = "light",
 			groups = {cracky=3},
 			sounds = default.node_sound_metal_defaults(),
 		})
 
 		if minetest.get_modpath("moreblocks") then
-			stairsplus:register_all("bridger", "block_"..bridge_colors, "bridger:block_"..bridge_colors, {
+			stairsplus:register_all("bridger", "block_" .. bridge_colors, "bridger:block_" .. bridge_colors, {
 				description = bridge_desc,
-				tiles = {"bridges_"..bridge_colors..".png"},
+				tiles = {"bridges_" .. bridge_colors .. ".png"},
 				groups = {cracky=3},
 				sounds = default.node_sound_metal_defaults(),
 			})
 
-			minetest.register_alias("bridger:step_"..bridge_colors, "bridger:panel_block_"..bridge_colors)
+			minetest.register_alias("bridger:step_" .. bridge_colors, "bridger:panel_block_" .. bridge_colors)
 		elseif minetest.get_modpath("stairs") then
 			stairs.register_stair_and_slab(
-				"block_"..bridge_colors,
-				"bridger:block_"..bridge_colors,
+				"block_" .. bridge_colors,
+				"bridger:block_" .. bridge_colors,
 				{cracky=3},
-				{"bridges_"..bridge_colors..".png"},
-				bridge_desc.." Stair",
-				bridge_desc.." Slab",
+				{"bridges_" .. bridge_colors .. ".png"},
+				bridge_desc .. " Stair",
+				bridge_desc .. " Slab",
 				default.node_sound_metal_defaults()
 			)
 
-			minetest.register_node("bridger:step_"..bridge_colors, {
-				description = bridge_desc.." Step",
+			minetest.register_node("bridger:step_" .. bridge_colors, {
+				description = bridge_desc .. " Step",
 				drawtype = "nodebox",
-				tiles = {"bridges_"..bridge_colors..".png"},
+				tiles = {"bridges_" .. bridge_colors .. ".png"},
 				paramtype = "light",
 				paramtype2 = "facedir",
 				node_box = {
@@ -113,10 +113,10 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			})
 		end
 
-		minetest.register_node("bridger:suspension_top_"..bridge_colors, {
-			description = bridge_desc.." Cable Top",
+		minetest.register_node("bridger:suspension_top_" .. bridge_colors, {
+			description = bridge_desc .. " Cable Top",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
 			paramtype = "light",
 			paramtype2 = "facedir",
 			node_box = {
@@ -136,10 +136,10 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			end,
 		})
 
-		minetest.register_node("bridger:suspension_cable_"..bridge_colors, {
-			description = bridge_desc.." Cable",
+		minetest.register_node("bridger:suspension_cable_" .. bridge_colors, {
+			description = bridge_desc .. " Cable",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
 			paramtype = "light",
 			node_box = {
 				type = "fixed",
@@ -151,10 +151,10 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:deck_"..bridge_colors, {
-			description = bridge_desc.." Deck",
+		minetest.register_node("bridger:deck_" .. bridge_colors, {
+			description = bridge_desc .. " Deck",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
 			paramtype = "light",
 			sunlight_propagates = true,
 			node_box = {
@@ -173,10 +173,10 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:deck_edge_"..bridge_colors, {
-			description = bridge_desc.." Deck Edge",
+		minetest.register_node("bridger:deck_edge_" .. bridge_colors, {
+			description = bridge_desc .. " Deck Edge",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -197,10 +197,10 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:train_deck_"..bridge_colors, {
-			description = bridge_desc.." Train Deck",
+		minetest.register_node("bridger:train_deck_" .. bridge_colors, {
+			description = bridge_desc .. " Train Deck",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
 			paramtype = "light",
 			sunlight_propagates = true,
 			node_box = {
@@ -247,10 +247,10 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:girder_mid_"..bridge_colors, {
-			description = bridge_desc.." Girder Middle",
+		minetest.register_node("bridger:girder_mid_" .. bridge_colors, {
+			description = bridge_desc .. " Girder Middle",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -275,10 +275,10 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:girder_right_"..bridge_colors, {
-			description = bridge_desc.." Girder Right End",
+		minetest.register_node("bridger:girder_right_" .. bridge_colors, {
+			description = bridge_desc .. " Girder Right End",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -315,10 +315,10 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:girder_left_"..bridge_colors, {
-			description = bridge_desc.." Girder Left End",
+		minetest.register_node("bridger:girder_left_" .. bridge_colors, {
+			description = bridge_desc .. " Girder Left End",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -355,12 +355,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_right_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Right Slant",
+		minetest.register_node("bridger:truss_superstructure_right_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Right Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -420,12 +420,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_left_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Left Slant",
+		minetest.register_node("bridger:truss_superstructure_left_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Left Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -485,12 +485,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_end_right_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure End Right Slant",
+		minetest.register_node("bridger:truss_superstructure_end_right_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure End Right Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_end_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_end_right_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_end_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_end_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -548,12 +548,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_end_left_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure End Left Slant",
+		minetest.register_node("bridger:truss_superstructure_end_left_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure End Left Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_end_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_end_left_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_end_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_end_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -611,12 +611,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_mid_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Middle",
+		minetest.register_node("bridger:truss_superstructure_mid_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Middle",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_mid.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_mid.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_mid.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_mid.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -707,12 +707,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_tall_right_slant_"..bridge_colors, {
-			description = bridge_desc.." Tall Truss Superstructure Right Slant",
+		minetest.register_node("bridger:truss_superstructure_tall_right_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Tall Truss Superstructure Right Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_right_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -770,12 +770,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_tall_left_slant_"..bridge_colors, {
-			description = bridge_desc.." Tall Truss Superstructure Left Slant",
+		minetest.register_node("bridger:truss_superstructure_tall_left_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Tall Truss Superstructure Left Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_left_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -833,12 +833,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_tall_mid_"..bridge_colors, {
-			description = bridge_desc.." Tall Truss Superstructure Middle",
+		minetest.register_node("bridger:truss_superstructure_tall_mid_" .. bridge_colors, {
+			description = bridge_desc .. " Tall Truss Superstructure Middle",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_mid.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_mid.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_mid.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_mid.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -849,96 +849,6 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 					{-0.5, 3.375, 0.375, 1.5, 3.5, 0.5},
 					{-0.5, -0.5, 0.375, -0.4375, 3.5, 0.5},
 					{1.4375, -0.5, 0.375, 1.5, 3.5, 0.5},
-					{1.3125, 3.25, 0.375, 1.4375, 3.375, 0.5},
-					{1.25, 3.125, 0.375, 1.375, 3.3125, 0.5},
-					{1.1875, 3, 0.375, 1.3125, 3.1875, 0.5},
-					{1.125, 2.875, 0.375, 1.25, 3.0625, 0.5},
-					{1.0625, 2.75, 0.375, 1.1875, 2.9375, 0.5},
-					{1, 2.625, 0.375, 1.125, 2.8125, 0.5},
-					{0.9375, 2.5625, 0.375, 1.0625, 2.6875, 0.5},
-					{0.875, 2.4375, 0.375, 1, 2.625, 0.5},
-					{0.8125, 2.3125, 0.375, 0.9375, 2.5, 0.5},
-					{0.75, 2.1875, 0.375, 0.875, 2.375, 0.5},
-					{0.6875, 2.0625, 0.375, 0.8125, 2.25, 0.5},
-					{0.625, 2, 0.375, 0.75, 2.125, 0.5},
-					{0.5625, 1.875, 0.375, 0.6875, 2.0625, 0.5},
-					{0.5, 1.75, 0.375, 0.625, 1.9375, 0.5},
-					{0.4375, 1.625, 0.375, 0.5625, 1.8125, 0.5},
-					{0.375, 1.5, 0.375, 0.5, 1.6875, 0.5},
-					{0.3125, 1.375, 0.375, 0.4375, 1.5625, 0.5},
-					{0.25, 1.3125, 0.375, 0.375, 1.4375, 0.5},
-					{0.1875, 1.1875, 0.375, 0.3125, 1.375, 0.5},
-					{0.125, 1.0625, 0.375, 0.25, 1.25, 0.5},
-					{0.0625, 0.9375, 0.375, 0.1875, 1.125, 0.5},
-					{0, 0.8125, 0.375, 0.125, 1, 0.5},
-					{-0.0625, 0.75, 0.375, 0.0625, 0.875, 0.5},
-					{-0.125, 0.625, 0.375, -3.35276e-008, 0.8125, 0.5},
-					{-0.1875, 0.5, 0.375, -0.0625, 0.6875, 0.5},
-					{-0.25, 0.375, 0.375, -0.125, 0.5625, 0.5},
-					{-0.3125, 0.25, 0.375, -0.1875, 0.4375, 0.5},
-					{-0.375, 0.125, 0.375, -0.25, 0.3125, 0.5},
-					{-0.4375, 0.0625, 0.375, -0.3125, 0.1875, 0.5},
-					{-0.4375, 3.25, 0.375, -0.3125, 3.375, 0.5},
-					{-0.375, 3.125, 0.375, -0.25, 3.3125, 0.5},
-					{-0.3125, 3, 0.375, -0.1875, 3.1875, 0.5},
-					{-0.25, 2.875, 0.375, -0.125, 3.0625, 0.5},
-					{-0.1875, 2.75, 0.375, -0.0625, 2.9375, 0.5},
-					{-0.125, 2.625, 0.375, 1.11759e-008, 2.8125, 0.5},
-					{-0.0625, 2.5625, 0.375, 0.0625, 2.6875, 0.5},
-					{0, 2.4375, 0.375, 0.125, 2.625, 0.5},
-					{0.0625, 2.3125, 0.375, 0.1875, 2.5, 0.5},
-					{0.125, 2.1875, 0.375, 0.25, 2.375, 0.5},
-					{0.1875, 2.0625, 0.375, 0.3125, 2.25, 0.5},
-					{0.25, 2, 0.375, 0.375, 2.125, 0.5},
-					{0.3125, 1.875, 0.375, 0.4375, 2.0625, 0.5},
-					{0.375, 1.75, 0.375, 0.5, 1.9375, 0.5},
-					{0.4375, 1.625, 0.375, 0.5625, 1.8125, 0.5},
-					{0.5, 1.5, 0.375, 0.625, 1.6875, 0.5},
-					{0.5625, 1.375, 0.375, 0.6875, 1.5625, 0.5},
-					{0.625, 1.3125, 0.375, 0.75, 1.4375, 0.5},
-					{0.6875, 1.1875, 0.375, 0.8125, 1.375, 0.5},
-					{0.75, 1.0625, 0.375, 0.875, 1.25, 0.5},
-					{0.8125, 0.9375, 0.375, 0.9375, 1.125, 0.5},
-					{0.875, 0.8125, 0.375, 1, 1, 0.5},
-					{0.9375, 0.75, 0.375, 1.0625, 0.875, 0.5},
-					{1, 0.625, 0.375, 1.125, 0.8125, 0.5},
-					{1.0625, 0.5, 0.375, 1.1875, 0.6875, 0.5},
-					{1.125, 0.375, 0.375, 1.25, 0.5625, 0.5},
-					{1.1875, 0.25, 0.375, 1.3125, 0.4375, 0.5},
-					{1.25, 0.125, 0.375, 1.375, 0.3125, 0.5},
-					{1.3125, 0.0625, 0.375, 1.4375, 0.1875, 0.5},
-				},
-			},
-			selection_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, 0.375, 1.5, 3.5, 0.5},
-				},
-			},
-			collision_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, 0.375, 1.5, 3.5, 0.5},
-				},
-			},
-			groups = {cracky=3},
-			sounds = default.node_sound_metal_defaults(),
-		})
-
-		minetest.register_node("bridger:truss_superstructure_tall_simple_"..bridge_colors, {
-			description = bridge_desc.." Tall Truss Superstructure Middle Simple",
-			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_simple.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_simple.png^[makealpha:255,126,126",
-			paramtype = "light",
-			paramtype2 = "facedir",
-			sunlight_propagates = true,
-			node_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, 0.375, 1.5, 0.0625, 0.5},
-					{-0.5, 3.375, 0.375, 1.5, 3.5, 0.5},
 					{1.3125, 3.25, 0.375, 1.4375, 3.375, 0.5},
 					{1.25, 3.125, 0.375, 1.375, 3.3125, 0.5},
 					{1.1875, 3, 0.375, 1.3125, 3.1875, 0.5},
@@ -997,6 +907,96 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 					{1.1875, 0.25, 0.375, 1.3125, 0.4375, 0.5},
 					{1.25, 0.125, 0.375, 1.375, 0.3125, 0.5},
 					{1.3125, 0.0625, 0.375, 1.4375, 0.1875, 0.5},
+				},
+			},
+			selection_box = {
+				type = "fixed",
+				fixed = {
+					{-0.5, -0.5, 0.375, 1.5, 3.5, 0.5},
+				},
+			},
+			collision_box = {
+				type = "fixed",
+				fixed = {
+					{-0.5, -0.5, 0.375, 1.5, 3.5, 0.5},
+				},
+			},
+			groups = {cracky=3},
+			sounds = default.node_sound_metal_defaults(),
+		})
+
+		minetest.register_node("bridger:truss_superstructure_tall_simple_" .. bridge_colors, {
+			description = bridge_desc .. " Tall Truss Superstructure Middle Simple",
+			drawtype = "nodebox",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_simple.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_simple.png^[makealpha:255,126,126",
+			paramtype = "light",
+			paramtype2 = "facedir",
+			sunlight_propagates = true,
+			node_box = {
+				type = "fixed",
+				fixed = {
+					{-0.5, -0.5, 0.375, 1.5, 0.0625, 0.5},
+					{-0.5, 3.375, 0.375, 1.5, 3.5, 0.5},
+					{1.3125, 3.25, 0.375, 1.4375, 3.375, 0.5},
+					{1.25, 3.125, 0.375, 1.375, 3.3125, 0.5},
+					{1.1875, 3, 0.375, 1.3125, 3.1875, 0.5},
+					{1.125, 2.875, 0.375, 1.25, 3.0625, 0.5},
+					{1.0625, 2.75, 0.375, 1.1875, 2.9375, 0.5},
+					{1, 2.625, 0.375, 1.125, 2.8125, 0.5},
+					{0.9375, 2.5625, 0.375, 1.0625, 2.6875, 0.5},
+					{0.875, 2.4375, 0.375, 1, 2.625, 0.5},
+					{0.8125, 2.3125, 0.375, 0.9375, 2.5, 0.5},
+					{0.75, 2.1875, 0.375, 0.875, 2.375, 0.5},
+					{0.6875, 2.0625, 0.375, 0.8125, 2.25, 0.5},
+					{0.625, 2, 0.375, 0.75, 2.125, 0.5},
+					{0.5625, 1.875, 0.375, 0.6875, 2.0625, 0.5},
+					{0.5, 1.75, 0.375, 0.625, 1.9375, 0.5},
+					{0.4375, 1.625, 0.375, 0.5625, 1.8125, 0.5},
+					{0.375, 1.5, 0.375, 0.5, 1.6875, 0.5},
+					{0.3125, 1.375, 0.375, 0.4375, 1.5625, 0.5},
+					{0.25, 1.3125, 0.375, 0.375, 1.4375, 0.5},
+					{0.1875, 1.1875, 0.375, 0.3125, 1.375, 0.5},
+					{0.125, 1.0625, 0.375, 0.25, 1.25, 0.5},
+					{0.0625, 0.9375, 0.375, 0.1875, 1.125, 0.5},
+					{0, 0.8125, 0.375, 0.125, 1, 0.5},
+					{-0.0625, 0.75, 0.375, 0.0625, 0.875, 0.5},
+					{-0.125, 0.625, 0.375, -3.35276e-008, 0.8125, 0.5},
+					{-0.1875, 0.5, 0.375, -0.0625, 0.6875, 0.5},
+					{-0.25, 0.375, 0.375, -0.125, 0.5625, 0.5},
+					{-0.3125, 0.25, 0.375, -0.1875, 0.4375, 0.5},
+					{-0.375, 0.125, 0.375, -0.25, 0.3125, 0.5},
+					{-0.4375, 0.0625, 0.375, -0.3125, 0.1875, 0.5},
+					{-0.4375, 3.25, 0.375, -0.3125, 3.375, 0.5},
+					{-0.375, 3.125, 0.375, -0.25, 3.3125, 0.5},
+					{-0.3125, 3, 0.375, -0.1875, 3.1875, 0.5},
+					{-0.25, 2.875, 0.375, -0.125, 3.0625, 0.5},
+					{-0.1875, 2.75, 0.375, -0.0625, 2.9375, 0.5},
+					{-0.125, 2.625, 0.375, 1.11759e-008, 2.8125, 0.5},
+					{-0.0625, 2.5625, 0.375, 0.0625, 2.6875, 0.5},
+					{0, 2.4375, 0.375, 0.125, 2.625, 0.5},
+					{0.0625, 2.3125, 0.375, 0.1875, 2.5, 0.5},
+					{0.125, 2.1875, 0.375, 0.25, 2.375, 0.5},
+					{0.1875, 2.0625, 0.375, 0.3125, 2.25, 0.5},
+					{0.25, 2, 0.375, 0.375, 2.125, 0.5},
+					{0.3125, 1.875, 0.375, 0.4375, 2.0625, 0.5},
+					{0.375, 1.75, 0.375, 0.5, 1.9375, 0.5},
+					{0.4375, 1.625, 0.375, 0.5625, 1.8125, 0.5},
+					{0.5, 1.5, 0.375, 0.625, 1.6875, 0.5},
+					{0.5625, 1.375, 0.375, 0.6875, 1.5625, 0.5},
+					{0.625, 1.3125, 0.375, 0.75, 1.4375, 0.5},
+					{0.6875, 1.1875, 0.375, 0.8125, 1.375, 0.5},
+					{0.75, 1.0625, 0.375, 0.875, 1.25, 0.5},
+					{0.8125, 0.9375, 0.375, 0.9375, 1.125, 0.5},
+					{0.875, 0.8125, 0.375, 1, 1, 0.5},
+					{0.9375, 0.75, 0.375, 1.0625, 0.875, 0.5},
+					{1, 0.625, 0.375, 1.125, 0.8125, 0.5},
+					{1.0625, 0.5, 0.375, 1.1875, 0.6875, 0.5},
+					{1.125, 0.375, 0.375, 1.25, 0.5625, 0.5},
+					{1.1875, 0.25, 0.375, 1.3125, 0.4375, 0.5},
+					{1.25, 0.125, 0.375, 1.375, 0.3125, 0.5},
+					{1.3125, 0.0625, 0.375, 1.4375, 0.1875, 0.5},
 
 				},
 			},
@@ -1016,12 +1016,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_tall_simple_end_left_"..bridge_colors, {
-			description = bridge_desc.." Tall Truss Superstructure Simple Left End",
+		minetest.register_node("bridger:truss_superstructure_tall_simple_end_left_" .. bridge_colors, {
+			description = bridge_desc .. " Tall Truss Superstructure Simple Left End",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_simple_end_left.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_simple_end_left.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_simple_end_left.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_simple_end_left.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1035,12 +1035,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_tall_simple_end_right_"..bridge_colors, {
-			description = bridge_desc.." Tall Truss Superstructure Simple Right End",
+		minetest.register_node("bridger:truss_superstructure_tall_simple_end_right_" .. bridge_colors, {
+			description = bridge_desc .. " Tall Truss Superstructure Simple Right End",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_simple_end_right.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_tall_simple_end_right.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_simple_end_right.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_tall_simple_end_right.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1054,12 +1054,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_simple_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Middle Simple",
+		minetest.register_node("bridger:truss_superstructure_simple_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Middle Simple",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_simple.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_simple.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_simple.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_simple.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1150,12 +1150,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_simple_end_left_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Simple Left End",
+		minetest.register_node("bridger:truss_superstructure_simple_end_left_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Simple Left End",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_simple_end_left.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_simple_end_left.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_simple_end_left.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_simple_end_left.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1169,12 +1169,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_simple_end_right_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Simple Right End",
+		minetest.register_node("bridger:truss_superstructure_simple_end_right_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Simple Right End",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_simple_end_right.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_simple_end_right.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_simple_end_right.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_simple_end_right.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1188,12 +1188,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_up_right_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Up Right Slant",
+		minetest.register_node("bridger:truss_superstructure_up_right_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Up Right Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_up_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_up_right_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_up_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_up_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1268,12 +1268,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_up_left_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Up Left Slant",
+		minetest.register_node("bridger:truss_superstructure_up_left_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Up Left Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_up_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_up_left_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_up_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_up_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1346,12 +1346,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_up_mid_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Up Middle",
+		minetest.register_node("bridger:truss_superstructure_up_mid_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Up Middle",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_up_mid.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_up_mid.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_up_mid.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_up_mid.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1362,113 +1362,6 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 					{1.375, 3.375, 0.375, 1.5, 3.5, 0.5},
 					{-0.5, -0.5, 0.375, -0.4375, 2.5, 0.5},
 					{1.4375, -0.5, 0.375, 1.5, 3.5, 0.5},
-					{1.25, 3.3125, 0.375, 1.375, 3.4375, 0.5},
-					{1.125, 3.25, 0.375, 1.25, 3.375, 0.5},
-					{1, 3.1875, 0.375, 1.125, 3.3125, 0.5},
-					{0.875, 3.125, 0.375, 1, 3.25, 0.5},
-					{0.75, 3.0625, 0.375, 0.875, 3.1875, 0.5},
-					{0.625, 3, 0.375, 0.75, 3.125, 0.5},
-					{0.5, 2.9375, 0.375, 0.625, 3.0625, 0.5},
-					{0.375, 2.875, 0.375, 0.5, 3, 0.5},
-					{0.25, 2.8125, 0.375, 0.375, 2.9375, 0.5},
-					{0.125, 2.75, 0.375, 0.25, 2.875, 0.5},
-					{0, 2.6875, 0.375, 0.125, 2.8125, 0.5},
-					{-0.125, 2.625, 0.375, -1.2666e-007, 2.75, 0.5},
-					{-0.25, 2.5625, 0.375, -0.125, 2.6875, 0.5},
-					{-0.375, 2.5, 0.375, -0.25, 2.625, 0.5},
-					{-0.5, 2.4375, 0.375, -0.375, 2.5625, 0.5},
-					{1.3125, 3.25, 0.375, 1.4375, 3.375, 0.5},
-					{1.25, 3.125, 0.375, 1.375, 3.3125, 0.5},
-					{1.1875, 3, 0.375, 1.3125, 3.1875, 0.5},
-					{1.125, 2.875, 0.375, 1.25, 3.0625, 0.5},
-					{1.0625, 2.75, 0.375, 1.1875, 2.9375, 0.5},
-					{1, 2.625, 0.375, 1.125, 2.8125, 0.5},
-					{0.9375, 2.5625, 0.375, 1.0625, 2.6875, 0.5},
-					{0.875, 2.4375, 0.375, 1, 2.625, 0.5},
-					{0.8125, 2.3125, 0.375, 0.9375, 2.5, 0.5},
-					{0.75, 2.1875, 0.375, 0.875, 2.375, 0.5},
-					{0.6875, 2.0625, 0.375, 0.8125, 2.25, 0.5},
-					{0.625, 2, 0.375, 0.75, 2.125, 0.5},
-					{0.5625, 1.875, 0.375, 0.6875, 2.0625, 0.5},
-					{0.5, 1.75, 0.375, 0.625, 1.9375, 0.5},
-					{0.4375, 1.625, 0.375, 0.5625, 1.8125, 0.5},
-					{0.375, 1.5, 0.375, 0.5, 1.6875, 0.5},
-					{0.3125, 1.375, 0.375, 0.4375, 1.5625, 0.5},
-					{0.25, 1.3125, 0.375, 0.375, 1.4375, 0.5},
-					{0.1875, 1.1875, 0.375, 0.3125, 1.375, 0.5},
-					{0.125, 1.0625, 0.375, 0.25, 1.25, 0.5},
-					{0.0625, 0.9375, 0.375, 0.1875, 1.125, 0.5},
-					{0, 0.8125, 0.375, 0.125, 1, 0.5},
-					{-0.0625, 0.75, 0.375, 0.0625, 0.875, 0.5},
-					{-0.125, 0.625, 0.375, -3.35276e-008, 0.8125, 0.5},
-					{-0.1875, 0.5, 0.375, -0.0625, 0.6875, 0.5},
-					{-0.25, 0.375, 0.375, -0.125, 0.5625, 0.5},
-					{-0.3125, 0.25, 0.375, -0.1875, 0.4375, 0.5},
-					{-0.375, 0.125, 0.375, -0.25, 0.3125, 0.5},
-					{-0.4375, 0.0625, 0.375, -0.3125, 0.1875, 0.5},
-					{-0.4375, 2.25, 0.375, -0.3125, 2.375, 0.5},
-					{-0.375, 2.1875, 0.375, -0.25, 2.3125, 0.5},
-					{-0.3125, 2.0625, 0.375, -0.1875, 2.25, 0.5},
-					{-0.25, 2, 0.375, -0.125, 2.125, 0.5},
-					{-0.1875, 1.9375, 0.375, -0.0625, 2.0625, 0.5},
-					{-0.125, 1.875, 0.375, 0, 2, 0.5},
-					{-0.0625, 1.75, 0.375, 0.0625, 1.9375, 0.5},
-					{0, 1.6875, 0.375, 0.125, 1.8125, 0.5},
-					{0.0625, 1.625, 0.375, 0.1875, 1.75, 0.5},
-					{0.125, 1.5625, 0.375, 0.25, 1.6875, 0.5},
-					{0.1875, 1.4375, 0.375, 0.3125, 1.625, 0.5},
-					{0.25, 1.375, 0.375, 0.375, 1.5, 0.5},
-					{0.3125, 1.3125, 0.375, 0.4375, 1.4375, 0.5},
-					{0.375, 1.25, 0.375, 0.5, 1.375, 0.5},
-					{0.4375, 1.125, 0.375, 0.5625, 1.3125, 0.5},
-					{0.5, 1.0625, 0.375, 0.625, 1.1875, 0.5},
-					{0.5625, 1, 0.375, 0.6875, 1.125, 0.5},
-					{0.625, 0.9375, 0.375, 0.75, 1.0625, 0.5},
-					{0.6875, 0.8125, 0.375, 0.8125, 1, 0.5},
-					{0.75, 0.75, 0.375, 0.875, 0.875, 0.5},
-					{0.8125, 0.6875, 0.375, 0.9375, 0.8125, 0.5},
-					{0.875, 0.625, 0.375, 1, 0.75, 0.5},
-					{0.9375, 0.5, 0.375, 1.0625, 0.6875, 0.5},
-					{1, 0.4375, 0.375, 1.125, 0.5625, 0.5},
-					{1.0625, 0.375, 0.375, 1.1875, 0.5, 0.5},
-					{1.125, 0.3125, 0.375, 1.25, 0.4375, 0.5},
-					{1.1875, 0.1875, 0.375, 1.3125, 0.375, 0.5},
-					{1.25, 0.125, 0.375, 1.375, 0.25, 0.5},
-					{1.3125, 0.0625, 0.375, 1.4375, 0.1875, 0.5},
-					{1.375, 0, 0.375, 1.5, 0.125, 0.5},
-					{-0.4375, 2.3125, 0.375, -0.3125, 2.4375, 0.5},
-				},
-			},
-			selection_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, 0.375, 1.5, 3.5, 0.5},
-				},
-			},
-			collision_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, 0.375, 1.5, 3.5, 0.5},
-				},
-			},
-			groups = {cracky=3},
-			sounds = default.node_sound_metal_defaults(),
-		})
-
-		minetest.register_node("bridger:truss_superstructure_up_simple_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Up Simple",
-			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_up_simple.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_up_simple.png^[makealpha:255,126,126",
-			paramtype = "light",
-			paramtype2 = "facedir",
-			sunlight_propagates = true,
-			node_box = {
-				type = "fixed",
-				fixed = {
-					{-0.5, -0.5, 0.375, 1.5, 0.0625, 0.5},
-					{1.375, 3.375, 0.375, 1.5, 3.5, 0.5},
 					{1.25, 3.3125, 0.375, 1.375, 3.4375, 0.5},
 					{1.125, 3.25, 0.375, 1.25, 3.375, 0.5},
 					{1, 3.1875, 0.375, 1.125, 3.3125, 0.5},
@@ -1562,12 +1455,119 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_down_right_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Down Right Slant",
+		minetest.register_node("bridger:truss_superstructure_up_simple_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Up Simple",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_down_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_down_right_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_up_simple.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_up_simple.png^[makealpha:255,126,126",
+			paramtype = "light",
+			paramtype2 = "facedir",
+			sunlight_propagates = true,
+			node_box = {
+				type = "fixed",
+				fixed = {
+					{-0.5, -0.5, 0.375, 1.5, 0.0625, 0.5},
+					{1.375, 3.375, 0.375, 1.5, 3.5, 0.5},
+					{1.25, 3.3125, 0.375, 1.375, 3.4375, 0.5},
+					{1.125, 3.25, 0.375, 1.25, 3.375, 0.5},
+					{1, 3.1875, 0.375, 1.125, 3.3125, 0.5},
+					{0.875, 3.125, 0.375, 1, 3.25, 0.5},
+					{0.75, 3.0625, 0.375, 0.875, 3.1875, 0.5},
+					{0.625, 3, 0.375, 0.75, 3.125, 0.5},
+					{0.5, 2.9375, 0.375, 0.625, 3.0625, 0.5},
+					{0.375, 2.875, 0.375, 0.5, 3, 0.5},
+					{0.25, 2.8125, 0.375, 0.375, 2.9375, 0.5},
+					{0.125, 2.75, 0.375, 0.25, 2.875, 0.5},
+					{0, 2.6875, 0.375, 0.125, 2.8125, 0.5},
+					{-0.125, 2.625, 0.375, -1.2666e-007, 2.75, 0.5},
+					{-0.25, 2.5625, 0.375, -0.125, 2.6875, 0.5},
+					{-0.375, 2.5, 0.375, -0.25, 2.625, 0.5},
+					{-0.5, 2.4375, 0.375, -0.375, 2.5625, 0.5},
+					{1.3125, 3.25, 0.375, 1.4375, 3.375, 0.5},
+					{1.25, 3.125, 0.375, 1.375, 3.3125, 0.5},
+					{1.1875, 3, 0.375, 1.3125, 3.1875, 0.5},
+					{1.125, 2.875, 0.375, 1.25, 3.0625, 0.5},
+					{1.0625, 2.75, 0.375, 1.1875, 2.9375, 0.5},
+					{1, 2.625, 0.375, 1.125, 2.8125, 0.5},
+					{0.9375, 2.5625, 0.375, 1.0625, 2.6875, 0.5},
+					{0.875, 2.4375, 0.375, 1, 2.625, 0.5},
+					{0.8125, 2.3125, 0.375, 0.9375, 2.5, 0.5},
+					{0.75, 2.1875, 0.375, 0.875, 2.375, 0.5},
+					{0.6875, 2.0625, 0.375, 0.8125, 2.25, 0.5},
+					{0.625, 2, 0.375, 0.75, 2.125, 0.5},
+					{0.5625, 1.875, 0.375, 0.6875, 2.0625, 0.5},
+					{0.5, 1.75, 0.375, 0.625, 1.9375, 0.5},
+					{0.4375, 1.625, 0.375, 0.5625, 1.8125, 0.5},
+					{0.375, 1.5, 0.375, 0.5, 1.6875, 0.5},
+					{0.3125, 1.375, 0.375, 0.4375, 1.5625, 0.5},
+					{0.25, 1.3125, 0.375, 0.375, 1.4375, 0.5},
+					{0.1875, 1.1875, 0.375, 0.3125, 1.375, 0.5},
+					{0.125, 1.0625, 0.375, 0.25, 1.25, 0.5},
+					{0.0625, 0.9375, 0.375, 0.1875, 1.125, 0.5},
+					{0, 0.8125, 0.375, 0.125, 1, 0.5},
+					{-0.0625, 0.75, 0.375, 0.0625, 0.875, 0.5},
+					{-0.125, 0.625, 0.375, -3.35276e-008, 0.8125, 0.5},
+					{-0.1875, 0.5, 0.375, -0.0625, 0.6875, 0.5},
+					{-0.25, 0.375, 0.375, -0.125, 0.5625, 0.5},
+					{-0.3125, 0.25, 0.375, -0.1875, 0.4375, 0.5},
+					{-0.375, 0.125, 0.375, -0.25, 0.3125, 0.5},
+					{-0.4375, 0.0625, 0.375, -0.3125, 0.1875, 0.5},
+					{-0.4375, 2.25, 0.375, -0.3125, 2.375, 0.5},
+					{-0.375, 2.1875, 0.375, -0.25, 2.3125, 0.5},
+					{-0.3125, 2.0625, 0.375, -0.1875, 2.25, 0.5},
+					{-0.25, 2, 0.375, -0.125, 2.125, 0.5},
+					{-0.1875, 1.9375, 0.375, -0.0625, 2.0625, 0.5},
+					{-0.125, 1.875, 0.375, 0, 2, 0.5},
+					{-0.0625, 1.75, 0.375, 0.0625, 1.9375, 0.5},
+					{0, 1.6875, 0.375, 0.125, 1.8125, 0.5},
+					{0.0625, 1.625, 0.375, 0.1875, 1.75, 0.5},
+					{0.125, 1.5625, 0.375, 0.25, 1.6875, 0.5},
+					{0.1875, 1.4375, 0.375, 0.3125, 1.625, 0.5},
+					{0.25, 1.375, 0.375, 0.375, 1.5, 0.5},
+					{0.3125, 1.3125, 0.375, 0.4375, 1.4375, 0.5},
+					{0.375, 1.25, 0.375, 0.5, 1.375, 0.5},
+					{0.4375, 1.125, 0.375, 0.5625, 1.3125, 0.5},
+					{0.5, 1.0625, 0.375, 0.625, 1.1875, 0.5},
+					{0.5625, 1, 0.375, 0.6875, 1.125, 0.5},
+					{0.625, 0.9375, 0.375, 0.75, 1.0625, 0.5},
+					{0.6875, 0.8125, 0.375, 0.8125, 1, 0.5},
+					{0.75, 0.75, 0.375, 0.875, 0.875, 0.5},
+					{0.8125, 0.6875, 0.375, 0.9375, 0.8125, 0.5},
+					{0.875, 0.625, 0.375, 1, 0.75, 0.5},
+					{0.9375, 0.5, 0.375, 1.0625, 0.6875, 0.5},
+					{1, 0.4375, 0.375, 1.125, 0.5625, 0.5},
+					{1.0625, 0.375, 0.375, 1.1875, 0.5, 0.5},
+					{1.125, 0.3125, 0.375, 1.25, 0.4375, 0.5},
+					{1.1875, 0.1875, 0.375, 1.3125, 0.375, 0.5},
+					{1.25, 0.125, 0.375, 1.375, 0.25, 0.5},
+					{1.3125, 0.0625, 0.375, 1.4375, 0.1875, 0.5},
+					{1.375, 0, 0.375, 1.5, 0.125, 0.5},
+					{-0.4375, 2.3125, 0.375, -0.3125, 2.4375, 0.5},
+				},
+			},
+			selection_box = {
+				type = "fixed",
+				fixed = {
+					{-0.5, -0.5, 0.375, 1.5, 3.5, 0.5},
+				},
+			},
+			collision_box = {
+				type = "fixed",
+				fixed = {
+					{-0.5, -0.5, 0.375, 1.5, 3.5, 0.5},
+				},
+			},
+			groups = {cracky=3},
+			sounds = default.node_sound_metal_defaults(),
+		})
+
+		minetest.register_node("bridger:truss_superstructure_down_right_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Down Right Slant",
+			drawtype = "nodebox",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_down_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_down_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1640,12 +1640,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_down_left_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Down Left Slant",
+		minetest.register_node("bridger:truss_superstructure_down_left_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Down Left Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_down_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_down_left_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_down_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_down_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1720,12 +1720,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_down_mid_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Down Middle",
+		minetest.register_node("bridger:truss_superstructure_down_mid_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Down Middle",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_down_mid.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_down_mid.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_down_mid.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_down_mid.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1829,12 +1829,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_down_simple_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Down Simple",
+		minetest.register_node("bridger:truss_superstructure_down_simple_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Down Simple",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_down_simple.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_down_simple.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_down_simple.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_down_simple.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1936,12 +1936,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_substructure_end_right_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Substructure End Right Slant",
+		minetest.register_node("bridger:truss_substructure_end_right_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Substructure End Right Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_substructure_end_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_substructure_end_right_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_end_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_end_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1998,12 +1998,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_substructure_end_left_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Substructure End Left Slant",
+		minetest.register_node("bridger:truss_substructure_end_left_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Substructure End Left Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_substructure_end_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_substructure_end_left_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_end_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_end_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2060,12 +2060,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_substructure_right_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Substructure Right Slant",
+		minetest.register_node("bridger:truss_substructure_right_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Substructure Right Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_substructure_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_substructure_right_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2123,12 +2123,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_substructure_left_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Substructure Left Slant",
+		minetest.register_node("bridger:truss_substructure_left_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Substructure Left Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_substructure_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_substructure_left_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2187,12 +2187,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_substructure_simple_"..bridge_colors, {
-			description = bridge_desc.." Truss Substructure Simple",
+		minetest.register_node("bridger:truss_substructure_simple_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Substructure Simple",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_substructure_simple.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_substructure_simple.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_simple.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_simple.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2275,12 +2275,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_substructure_mid_"..bridge_colors, {
-			description = bridge_desc.." Truss Substructure Middle",
+		minetest.register_node("bridger:truss_substructure_mid_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Substructure Middle",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_substructure_mid.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_substructure_mid.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_mid.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_substructure_mid.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2365,12 +2365,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:small_upper_chord_"..bridge_colors, {
-			description = bridge_desc.." Small Upper Chord",
+		minetest.register_node("bridger:small_upper_chord_" .. bridge_colors, {
+			description = bridge_desc .. " Small Upper Chord",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_small_upper_chord.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_small_upper_chord.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_small_upper_chord.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_small_upper_chord.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2418,12 +2418,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:small_upper_chord_slanted_"..bridge_colors, {
-			description = bridge_desc.." Small Slanted Upper Chord",
+		minetest.register_node("bridger:small_upper_chord_slanted_" .. bridge_colors, {
+			description = bridge_desc .. " Small Slanted Upper Chord",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_small_upper_chord_slanted.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_small_upper_chord_slanted.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_small_upper_chord_slanted.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_small_upper_chord_slanted.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2522,12 +2522,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:medium_upper_chord_"..bridge_colors, {
-			description = bridge_desc.." Medium Upper Chord",
+		minetest.register_node("bridger:medium_upper_chord_" .. bridge_colors, {
+			description = bridge_desc .. " Medium Upper Chord",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_medium_upper_chord.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_medium_upper_chord.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_medium_upper_chord.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_medium_upper_chord.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2607,12 +2607,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:medium_upper_chord_slanted_"..bridge_colors, {
-			description = bridge_desc.." Medium Slanted Upper Chord",
+		minetest.register_node("bridger:medium_upper_chord_slanted_" .. bridge_colors, {
+			description = bridge_desc .. " Medium Slanted Upper Chord",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_medium_upper_chord_slanted.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_medium_upper_chord_slanted.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_medium_upper_chord_slanted.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_medium_upper_chord_slanted.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2723,12 +2723,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:large_upper_chord_"..bridge_colors, {
-			description = bridge_desc.." Large Upper Chord",
+		minetest.register_node("bridger:large_upper_chord_" .. bridge_colors, {
+			description = bridge_desc .. " Large Upper Chord",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_large_upper_chord.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_large_upper_chord.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_large_upper_chord.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_large_upper_chord.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2804,12 +2804,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:large_upper_chord_slanted_"..bridge_colors, {
-			description = bridge_desc.." Large Slanted Upper Chord",
+		minetest.register_node("bridger:large_upper_chord_slanted_" .. bridge_colors, {
+			description = bridge_desc .. " Large Slanted Upper Chord",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_large_upper_chord_slanted.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_large_upper_chord_slanted.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_large_upper_chord_slanted.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_large_upper_chord_slanted.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2920,12 +2920,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:small_support_"..bridge_colors, {
-			description = bridge_desc.." Small Support",
+		minetest.register_node("bridger:small_support_" .. bridge_colors, {
+			description = bridge_desc .. " Small Support",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_small_support.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_small_support.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_small_support.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_small_support.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -3032,12 +3032,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:small_support_top_"..bridge_colors, {
-			description = bridge_desc.." Small Support Top",
+		minetest.register_node("bridger:small_support_top_" .. bridge_colors, {
+			description = bridge_desc .. " Small Support Top",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_small_support_top.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_small_support_top.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_small_support_top.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_small_support_top.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -3228,12 +3228,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:medium_support_"..bridge_colors, {
-			description = bridge_desc.." Medium Support",
+		minetest.register_node("bridger:medium_support_" .. bridge_colors, {
+			description = bridge_desc .. " Medium Support",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_medium_support.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_medium_support.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_medium_support.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_medium_support.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -3339,12 +3339,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:medium_support_bot_"..bridge_colors, {
-			description = bridge_desc.." Bottom Medium Support",
+		minetest.register_node("bridger:medium_support_bot_" .. bridge_colors, {
+			description = bridge_desc .. " Bottom Medium Support",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_medium_support_bot.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_medium_support_bot.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_medium_support_bot.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_medium_support_bot.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -3365,12 +3365,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:large_support_"..bridge_colors, {
-			description = bridge_desc.." Large Support",
+		minetest.register_node("bridger:large_support_" .. bridge_colors, {
+			description = bridge_desc .. " Large Support",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_large_support.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_large_support.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_large_support.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_large_support.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -3483,12 +3483,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:large_support_bot_"..bridge_colors, {
-			description = bridge_desc.." Bottom Large Support",
+		minetest.register_node("bridger:large_support_bot_" .. bridge_colors, {
+			description = bridge_desc .. " Bottom Large Support",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_large_support_bot.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_large_support_bot.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_large_support_bot.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_large_support_bot.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -3509,12 +3509,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_right_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Right Slant",
+		minetest.register_node("bridger:truss_superstructure_right_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Right Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -3574,12 +3574,12 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:truss_superstructure_left_slant_"..bridge_colors, {
-			description = bridge_desc.." Truss Superstructure Left Slant",
+		minetest.register_node("bridger:truss_superstructure_left_slant_" .. bridge_colors, {
+			description = bridge_desc .. " Truss Superstructure Left Slant",
 			drawtype = "nodebox",
-			tiles = {"bridges_"..bridge_colors..".png"},
-			inventory_image = "bridges_"..bridge_colors..".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_"..bridge_colors..".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
+			tiles = {"bridges_" .. bridge_colors .. ".png"},
+			inventory_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_colors .. ".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -3639,10 +3639,10 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:corrugated_steel_"..bridge_colors, {
-			description = bridge_desc.." Corrugated Steel",
+		minetest.register_node("bridger:corrugated_steel_" .. bridge_colors, {
+			description = bridge_desc .. " Corrugated Steel",
 			drawtype = "nodebox",
-			tiles = {"bridges_corrugated_steel_"..bridge_colors..".png"},
+			tiles = {"bridges_corrugated_steel_" .. bridge_colors .. ".png"},
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -3662,10 +3662,10 @@ if not minetest.settings:get_bool("bridger_disable_trusses") then
 			sounds = default.node_sound_metal_defaults(),
 		})
 
-		minetest.register_node("bridger:corrugated_steel_ceiling_"..bridge_colors, {
-			description = bridge_desc.." Corrugated Steel Deck",
+		minetest.register_node("bridger:corrugated_steel_ceiling_" .. bridge_colors, {
+			description = bridge_desc .. " Corrugated Steel Deck",
 			drawtype = "nodebox",
-			tiles = {"bridges_corrugated_steel_"..bridge_colors..".png^[transformR90"},
+			tiles = {"bridges_corrugated_steel_" .. bridge_colors .. ".png^[transformR90"},
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
