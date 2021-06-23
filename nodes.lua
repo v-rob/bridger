@@ -359,8 +359,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Right Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -424,8 +426,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Left Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -489,8 +493,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure End Right Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_end_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_end_right_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_end_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_end_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -552,8 +558,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure End Left Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_end_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_end_left_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_end_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_end_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -615,8 +623,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Middle",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_mid.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_mid.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_mid.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_mid.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -711,8 +721,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Tall Truss Superstructure Right Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_right_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -774,8 +786,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Tall Truss Superstructure Left Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_left_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -837,8 +851,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Tall Truss Superstructure Middle",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_mid.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_mid.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_mid.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_mid.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -929,8 +945,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Tall Truss Superstructure Middle Simple",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_simple.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_simple.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_simple.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_simple.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1020,8 +1038,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Tall Truss Superstructure Simple Left End",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_simple_end_left.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_simple_end_left.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_simple_end_left.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_simple_end_left.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1039,8 +1059,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Tall Truss Superstructure Simple Right End",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_simple_end_right.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_tall_simple_end_right.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_simple_end_right.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_tall_simple_end_right.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1058,8 +1080,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Middle Simple",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_simple.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_simple.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_simple.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_simple.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1154,8 +1178,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Simple Left End",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_simple_end_left.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_simple_end_left.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_simple_end_left.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_simple_end_left.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1173,8 +1199,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Simple Right End",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_simple_end_right.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_simple_end_right.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_simple_end_right.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_simple_end_right.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1192,8 +1220,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Up Right Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_up_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_up_right_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_up_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_up_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1272,8 +1302,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Up Left Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_up_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_up_left_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_up_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_up_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1350,8 +1382,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Up Middle",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_up_mid.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_up_mid.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_up_mid.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_up_mid.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1459,8 +1493,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Up Simple",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_up_simple.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_up_simple.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_up_simple.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_up_simple.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1566,8 +1602,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Down Right Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_down_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_down_right_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_down_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_down_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1644,8 +1682,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Down Left Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_down_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_down_left_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_down_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_down_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1724,8 +1764,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Down Middle",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_down_mid.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_down_mid.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_down_mid.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_down_mid.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1833,8 +1875,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Superstructure Down Simple",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_down_simple.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_superstructure_down_simple.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_down_simple.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_superstructure_down_simple.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -1940,8 +1984,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Substructure End Right Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_substructure_end_right_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_substructure_end_right_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_substructure_end_right_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_substructure_end_right_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,
@@ -2002,8 +2048,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 			description = bridge_desc .. " Truss Substructure End Left Slant",
 			drawtype = "nodebox",
 			tiles = {"bridges_" .. bridge_color .. ".png"},
-			inventory_image = "bridges_" .. bridge_color .. ".png^bridges_substructure_end_left_slant.png^[makealpha:255,126,126",
-			wield_image = "bridges_" .. bridge_color .. ".png^bridges_substructure_end_left_slant.png^[makealpha:255,126,126",
+			inventory_image = "bridges_" .. bridge_color ..
+				".png^bridges_substructure_end_left_slant.png^[makealpha:255,126,126",
+			wield_image = "bridges_" .. bridge_color ..
+				".png^bridges_substructure_end_left_slant.png^[makealpha:255,126,126",
 			paramtype = "light",
 			paramtype2 = "facedir",
 			sunlight_propagates = true,

@@ -61,7 +61,8 @@ for _, color in pairs(bridger_colors) do
 		minetest.register_alias("bridges:" .. prefix .. oldname, "bridger:" .. prefix .. "_" .. newname)
 	end
 
-	minetest.register_alias("bridges:truss_superstructure_simple_end" .. oldname, "bridger:truss_superstructure_simple_end_left_" .. newname)
+	minetest.register_alias("bridges:truss_superstructure_simple_end" .. oldname,
+			"bridger:truss_superstructure_simple_end_left_" .. newname)
 	minetest.register_alias("bridges:girder_left_end" .. oldname, "bridger:girder_left_" .. newname)
 
 end

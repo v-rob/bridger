@@ -174,7 +174,11 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 		minetest.register_craft({
 			output = "bridger:corrugated_steel_ceiling_" .. bridge_color .. " 3",
 			recipe = {
-				{"bridger:corrugated_steel" .. bridge_color, "bridger:corrugated_steel" .. bridge_color, "bridger:corrugated_steel" .. bridge_color},
+				{
+					"bridger:corrugated_steel" .. bridge_color,
+					"bridger:corrugated_steel" .. bridge_color,
+					"bridger:corrugated_steel" .. bridge_color
+				},
 			}
 		})
 
@@ -204,7 +208,11 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 		minetest.register_craft({
 			output = "bridger:corrugated_steel_ceiling_" .. bridge_color .. " 3",
 			recipe = {
-				{"bridger:corrugated_steel" .. bridge_color, "bridger:corrugated_steel" .. bridge_color, "bridger:corrugated_steel" .. bridge_color},
+				{
+					"bridger:corrugated_steel" .. bridge_color,
+					"bridger:corrugated_steel" .. bridge_color,
+					"bridger:corrugated_steel" .. bridge_color
+				},
 			}
 		})
 
@@ -324,13 +332,19 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 		minetest.register_craft({
 			output = "bridger:truss_superstructure_mid_" .. bridge_color,
 			type = "shapeless",
-			recipe = {"bridger:truss_superstructure_left_slant_" .. bridge_color, "bridger:truss_superstructure_right_slant_" .. bridge_color},
+			recipe = {
+				"bridger:truss_superstructure_left_slant_" .. bridge_color,
+				"bridger:truss_superstructure_right_slant_" .. bridge_color
+			},
 		})
 
 		minetest.register_craft({
 			output = "bridger:truss_superstructure_tall_mid_" .. bridge_color,
 			type = "shapeless",
-			recipe = {"bridger:truss_superstructure_tall_left_slant_" .. bridge_color, "bridger:truss_superstructure_tall_right_slant_" .. bridge_color},
+			recipe = {
+				"bridger:truss_superstructure_tall_left_slant_" .. bridge_color,
+				"bridger:truss_superstructure_tall_right_slant_" .. bridge_color
+			},
 		})
 
 		minetest.register_craft({
@@ -405,7 +419,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 		minetest.register_craft({
 			output = "bridger:truss_substructure_mid_" .. bridge_color,
 			type = "shapeless",
-			recipe = {"bridger:truss_substructure_left_slant_" .. bridge_color, "bridger:truss_substructure_right_slant_" .. bridge_color},
+			recipe = {
+				"bridger:truss_substructure_left_slant_" .. bridge_color,
+				"bridger:truss_substructure_right_slant_" .. bridge_color
+			},
 		})
 
 		minetest.register_craft({
