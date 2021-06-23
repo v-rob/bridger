@@ -28,7 +28,7 @@ minetest.register_craft({
 	}
 })
 
-if minetest.settings:get_bool("bridger_enable_trusses") then
+if minetest.settings:get_bool("bridger_enable_trusses") or true then
 	minetest.register_craftitem("bridger:bridges_steel_rod", {
 		description = "Steel Rod",
 		inventory_image = "bridges_steel_rod.png",
@@ -855,7 +855,7 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 	end
 end
 
-if minetest.settings:get_bool("bridger_enable_trestles") then
+if minetest.settings:get_bool("bridger_enable_trestles") or true then
 	minetest.register_craft({
 		output = "bridger:trestle_support_small",
 		recipe = {
@@ -925,7 +925,7 @@ if minetest.settings:get_bool("bridger_enable_trestles") then
 	})
 end
 
-if minetest.settings:get_bool("bridger_enable_wooden_bridges") then
+if minetest.settings:get_bool("bridger_enable_wooden_bridges") or true then
 	minetest.register_craft({
 		output = "bridger:small_beam",
 		recipe = {
