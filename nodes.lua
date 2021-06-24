@@ -23,7 +23,7 @@ local function rotate_and_place(itemstack, placer, pointed_thing)
 	return minetest.item_place(itemstack, placer, pointed_thing, param2)
 end
 
-if minetest.settings:get_bool("bridger_enable_trusses") or true then
+if minetest.settings:get_bool("bridger_enable_trusses", true) then
 	local bridge_colors = {
 		{"Green", "green"},
 		{"Red", "red"},
@@ -3729,7 +3729,7 @@ if minetest.settings:get_bool("bridger_enable_trusses") or true then
 	end
 end
 
-if minetest.settings:get_bool("bridger_enable_trestles") or true then
+if minetest.settings:get_bool("bridger_enable_trestles", true) then
 	minetest.register_node("bridger:trestle_support", {
 		description = "Trestle Support",
 		drawtype = "nodebox",
@@ -4140,7 +4140,7 @@ if minetest.settings:get_bool("bridger_enable_trestles") or true then
 	})
 end
 
-if minetest.settings:get_bool("bridger_enable_wooden_bridges") or true then
+if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 	minetest.register_node("bridger:small_beam", {
 		description = "Small Wooden Beam Bridge",
 		drawtype = "nodebox",
