@@ -28,7 +28,7 @@ minetest.register_craft({
 	}
 })
 
-if minetest.settings:get_bool("bridger_enable_trusses") then
+if minetest.settings:get_bool("bridger_enable_trusses", true) then
 	minetest.register_craftitem("bridger:bridges_steel_rod", {
 		description = "Steel Rod",
 		inventory_image = "bridges_steel_rod.png",
@@ -174,7 +174,11 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 		minetest.register_craft({
 			output = "bridger:corrugated_steel_ceiling_" .. bridge_color .. " 3",
 			recipe = {
-				{"bridger:corrugated_steel" .. bridge_color, "bridger:corrugated_steel" .. bridge_color, "bridger:corrugated_steel" .. bridge_color},
+				{
+					"bridger:corrugated_steel" .. bridge_color,
+					"bridger:corrugated_steel" .. bridge_color,
+					"bridger:corrugated_steel" .. bridge_color
+				},
 			}
 		})
 
@@ -204,7 +208,11 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 		minetest.register_craft({
 			output = "bridger:corrugated_steel_ceiling_" .. bridge_color .. " 3",
 			recipe = {
-				{"bridger:corrugated_steel" .. bridge_color, "bridger:corrugated_steel" .. bridge_color, "bridger:corrugated_steel" .. bridge_color},
+				{
+					"bridger:corrugated_steel" .. bridge_color,
+					"bridger:corrugated_steel" .. bridge_color,
+					"bridger:corrugated_steel" .. bridge_color
+				},
 			}
 		})
 
@@ -324,13 +332,19 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 		minetest.register_craft({
 			output = "bridger:truss_superstructure_mid_" .. bridge_color,
 			type = "shapeless",
-			recipe = {"bridger:truss_superstructure_left_slant_" .. bridge_color, "bridger:truss_superstructure_right_slant_" .. bridge_color},
+			recipe = {
+				"bridger:truss_superstructure_left_slant_" .. bridge_color,
+				"bridger:truss_superstructure_right_slant_" .. bridge_color
+			},
 		})
 
 		minetest.register_craft({
 			output = "bridger:truss_superstructure_tall_mid_" .. bridge_color,
 			type = "shapeless",
-			recipe = {"bridger:truss_superstructure_tall_left_slant_" .. bridge_color, "bridger:truss_superstructure_tall_right_slant_" .. bridge_color},
+			recipe = {
+				"bridger:truss_superstructure_tall_left_slant_" .. bridge_color,
+				"bridger:truss_superstructure_tall_right_slant_" .. bridge_color
+			},
 		})
 
 		minetest.register_craft({
@@ -405,7 +419,10 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 		minetest.register_craft({
 			output = "bridger:truss_substructure_mid_" .. bridge_color,
 			type = "shapeless",
-			recipe = {"bridger:truss_substructure_left_slant_" .. bridge_color, "bridger:truss_substructure_right_slant_" .. bridge_color},
+			recipe = {
+				"bridger:truss_substructure_left_slant_" .. bridge_color,
+				"bridger:truss_substructure_right_slant_" .. bridge_color
+			},
 		})
 
 		minetest.register_craft({
@@ -684,161 +701,161 @@ if minetest.settings:get_bool("bridger_enable_trusses") then
 	}
 
 	for c in ipairs(bridge_nodes) do
-		local bridge_nodes = bridge_nodes[c]
+		local bridge_node = bridge_nodes[c]
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "white",
+			output = "bridger:" .. bridge_node .. "white",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "yellow", "dye:white"},
+			recipe = {"bridger:" .. bridge_node .. "yellow", "dye:white"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "white",
+			output = "bridger:" .. bridge_node .. "white",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "steel", "dye:white"},
+			recipe = {"bridger:" .. bridge_node .. "steel", "dye:white"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "white",
+			output = "bridger:" .. bridge_node .. "white",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "green", "dye:white"},
+			recipe = {"bridger:" .. bridge_node .. "green", "dye:white"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "white",
+			output = "bridger:" .. bridge_node .. "white",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "red", "dye:white"},
+			recipe = {"bridger:" .. bridge_node .. "red", "dye:white"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "red",
+			output = "bridger:" .. bridge_node .. "red",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "white", "dye:red"},
+			recipe = {"bridger:" .. bridge_node .. "white", "dye:red"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "red",
+			output = "bridger:" .. bridge_node .. "red",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "steel", "dye:red"},
+			recipe = {"bridger:" .. bridge_node .. "steel", "dye:red"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "red",
+			output = "bridger:" .. bridge_node .. "red",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "green", "dye:red"},
+			recipe = {"bridger:" .. bridge_node .. "green", "dye:red"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "red",
+			output = "bridger:" .. bridge_node .. "red",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "yellow", "dye:red"},
+			recipe = {"bridger:" .. bridge_node .. "yellow", "dye:red"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "green",
+			output = "bridger:" .. bridge_node .. "green",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "white", "dye:green"},
+			recipe = {"bridger:" .. bridge_node .. "white", "dye:green"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "green",
+			output = "bridger:" .. bridge_node .. "green",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "steel", "dye:green"},
+			recipe = {"bridger:" .. bridge_node .. "steel", "dye:green"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "green",
+			output = "bridger:" .. bridge_node .. "green",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "yellow", "dye:green"},
+			recipe = {"bridger:" .. bridge_node .. "yellow", "dye:green"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "green",
+			output = "bridger:" .. bridge_node .. "green",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "red", "dye:green"},
+			recipe = {"bridger:" .. bridge_node .. "red", "dye:green"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "steel",
+			output = "bridger:" .. bridge_node .. "steel",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "white", "dye:black"},
+			recipe = {"bridger:" .. bridge_node .. "white", "dye:black"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "steel",
+			output = "bridger:" .. bridge_node .. "steel",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "yellow", "dye:black"},
+			recipe = {"bridger:" .. bridge_node .. "yellow", "dye:black"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "steel",
+			output = "bridger:" .. bridge_node .. "steel",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "green", "dye:black"},
+			recipe = {"bridger:" .. bridge_node .. "green", "dye:black"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "steel",
+			output = "bridger:" .. bridge_node .. "steel",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "red", "dye:black"},
+			recipe = {"bridger:" .. bridge_node .. "red", "dye:black"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "steel",
+			output = "bridger:" .. bridge_node .. "steel",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "white", "dye:dark_grey"},
+			recipe = {"bridger:" .. bridge_node .. "white", "dye:dark_grey"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "steel",
+			output = "bridger:" .. bridge_node .. "steel",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "yellow", "dye:dark_grey"},
+			recipe = {"bridger:" .. bridge_node .. "yellow", "dye:dark_grey"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "steel",
+			output = "bridger:" .. bridge_node .. "steel",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "green", "dye:dark_grey"},
+			recipe = {"bridger:" .. bridge_node .. "green", "dye:dark_grey"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "steel",
+			output = "bridger:" .. bridge_node .. "steel",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "red", "dye:dark_grey"},
+			recipe = {"bridger:" .. bridge_node .. "red", "dye:dark_grey"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "yellow",
+			output = "bridger:" .. bridge_node .. "yellow",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "white", "dye:yellow"},
+			recipe = {"bridger:" .. bridge_node .. "white", "dye:yellow"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "yellow",
+			output = "bridger:" .. bridge_node .. "yellow",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "steel", "dye:yellow"},
+			recipe = {"bridger:" .. bridge_node .. "steel", "dye:yellow"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "yellow",
+			output = "bridger:" .. bridge_node .. "yellow",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "green", "dye:yellow"},
+			recipe = {"bridger:" .. bridge_node .. "green", "dye:yellow"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "yellow",
+			output = "bridger:" .. bridge_node .. "yellow",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "red", "dye:yellow"},
+			recipe = {"bridger:" .. bridge_node .. "red", "dye:yellow"},
 		})
 
 		minetest.register_craft({
-			output = "bridger:" .. bridge_nodes .. "red",
+			output = "bridger:" .. bridge_node .. "red",
 			type = "shapeless",
-			recipe = {"bridger:" .. bridge_nodes .. "yellow", "dye:red"},
+			recipe = {"bridger:" .. bridge_node .. "yellow", "dye:red"},
 		})
 	end
 end
 
-if minetest.settings:get_bool("bridger_enable_trestles") then
+if minetest.settings:get_bool("bridger_enable_trestles", true) then
 	minetest.register_craft({
 		output = "bridger:trestle_support_small",
 		recipe = {
@@ -908,7 +925,7 @@ if minetest.settings:get_bool("bridger_enable_trestles") then
 	})
 end
 
-if minetest.settings:get_bool("bridger_enable_wooden_bridges") then
+if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 	minetest.register_craft({
 		output = "bridger:small_beam",
 		recipe = {
