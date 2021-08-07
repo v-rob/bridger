@@ -6,18 +6,17 @@ local bridger_colors = {
 }
 
 for _, color in pairs(bridger_colors) do
-
 	local oldname = color
 	local newname =  string.lower(color)
 
 	if minetest.get_modpath("moreblocks") then
-		stairsplus:register_alias_all("bridges", "block_"..oldname, "bridger", "block_"..newname)
-		minetest.register_alias("bridges:step_"..oldname, "bridger:panel_block_"..newname)
+		stairsplus:register_alias_all("bridges", "block_" .. oldname, "bridger", "block_" .. newname)
+		minetest.register_alias("bridges:step_" .. oldname, "bridger:panel_block_" .. newname)
 	elseif minetest.get_modpath("stairs") then
-		minetest.register_alias("stairs:slab_block_"..oldname, "stairs:slab_block_"..newname)
-		minetest.register_alias("stairs:stair_block_"..oldname, "stairs:stair_block_"..newname)
+		minetest.register_alias("stairs:slab_block_" .. oldname, "stairs:slab_block_" .. newname)
+		minetest.register_alias("stairs:stair_block_" .. oldname, "stairs:stair_block_" .. newname)
 	end
-	
+
 	local bridger_error1 = {
 		"block_",
 		"step_",
@@ -41,12 +40,11 @@ for _, color in pairs(bridger_colors) do
 		"truss_substructure_end_left_slant_",
 		"truss_substructure_end_right_slant_"
 	}
-	
-	
+
 	for _, prefix in pairs (bridger_error1) do
-		minetest.register_alias("bridges:"..prefix..oldname, "bridger:"..prefix..newname)
+		minetest.register_alias("bridges:" .. prefix .. oldname, "bridger:" .. prefix .. newname)
 	end
-	
+
 	local bridger_error2 = {
 		"truss_substructure_mid",
 		"truss_substructure_simple",
@@ -58,14 +56,15 @@ for _, color in pairs(bridger_colors) do
 		"truss_superstructure_simple",
 		"truss_superstructure_simple_end_right"
 	}
-	
+
 	for _, prefix in pairs (bridger_error2) do
-		minetest.register_alias("bridges:"..prefix..oldname, "bridger:"..prefix.."_"..newname)
+		minetest.register_alias("bridges:" .. prefix .. oldname, "bridger:" .. prefix .. "_" .. newname)
 	end
-	
-	minetest.register_alias("bridges:truss_superstructure_simple_end"..oldname, "bridger:truss_superstructure_simple_end_left_"..newname)
-	minetest.register_alias("bridges:girder_left_end"..oldname, "bridger:girder_left_"..newname)
-	
+
+	minetest.register_alias("bridges:truss_superstructure_simple_end" .. oldname,
+			"bridger:truss_superstructure_simple_end_left_" .. newname)
+	minetest.register_alias("bridges:girder_left_end" .. oldname, "bridger:girder_left_" .. newname)
+
 end
 
 minetest.register_alias("bridges:corrugated_steel", "bridger:corrugated_steel_steel")
