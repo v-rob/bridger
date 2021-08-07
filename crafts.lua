@@ -96,29 +96,31 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 			}
 		})
 
-		minetest.register_craft({
-			output = "bridger:step_" .. bridge_color .. " 12",
-			recipe = {
-				{"", "bridger:block_" .. bridge_color},
-				{"bridger:block_" .. bridge_color, "bridger:block_" .. bridge_color},
-			}
-		})
+		if not minetest.get_modpath("moreblocks") then
+			minetest.register_craft({
+				output = "bridger:step_" .. bridge_color .. " 12",
+				recipe = {
+					{"", "bridger:block_" .. bridge_color},
+					{"bridger:block_" .. bridge_color, "bridger:block_" .. bridge_color},
+				}
+			})
 
-		minetest.register_craft({
-			output = "bridger:step_" .. bridge_color .. " 12",
-			recipe = {
-				{"bridger:block_" .. bridge_color, ""},
-				{"bridger:block_" .. bridge_color, "bridger:block_" .. bridge_color},
-			}
-		})
+			minetest.register_craft({
+				output = "bridger:step_" .. bridge_color .. " 12",
+				recipe = {
+					{"bridger:block_" .. bridge_color, ""},
+					{"bridger:block_" .. bridge_color, "bridger:block_" .. bridge_color},
+				}
+			})
 
-		minetest.register_craft({
-			output = "bridger:block_" .. bridge_color,
-			recipe = {
-				{"bridger:step_" .. bridge_color, "bridger:step_" .. bridge_color},
-				{"bridger:step_" .. bridge_color, "bridger:step_" .. bridge_color},
-			}
-		})
+			minetest.register_craft({
+				output = "bridger:block_" .. bridge_color,
+				recipe = {
+					{"bridger:step_" .. bridge_color, "bridger:step_" .. bridge_color},
+					{"bridger:step_" .. bridge_color, "bridger:step_" .. bridge_color},
+				}
+			})
+		end
 
 		minetest.register_craft({
 			output = "bridger:suspension_cable_" .. bridge_color .. " 16",
@@ -644,7 +646,6 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 
 	local bridge_nodes = {
 		"block_",
-		"step_",
 		"suspension_top_",
 		"suspension_cable_",
 		"deck_",
@@ -699,6 +700,10 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 		"corrugated_steel_",
 		"corrugated_steel_ceiling_",
 	}
+
+	if not minetest.get_modpath("moreblocks") then
+		table.insert(bridge_nodes, "step_")
+	end
 
 	for c in ipairs(bridge_nodes) do
 		local bridge_node = bridge_nodes[c]
@@ -845,12 +850,6 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 			output = "bridger:" .. bridge_node .. "yellow",
 			type = "shapeless",
 			recipe = {"bridger:" .. bridge_node .. "red", "dye:yellow"},
-		})
-
-		minetest.register_craft({
-			output = "bridger:" .. bridge_node .. "red",
-			type = "shapeless",
-			recipe = {"bridger:" .. bridge_node .. "yellow", "dye:red"},
 		})
 	end
 end
