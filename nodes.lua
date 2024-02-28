@@ -58,6 +58,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_stone_defaults(),
 		})
 
@@ -67,6 +68,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 			tiles = {"bridges_" .. bridge_color .. ".png"},
 			paramtype = "light",
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -75,6 +77,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				description = bridge_desc,
 				tiles = {"bridges_" .. bridge_color .. ".png"},
 				groups = {cracky=3},
+				is_ground_content = false,
 				sounds = default.node_sound_metal_defaults(),
 			})
 
@@ -103,6 +106,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 					},
 				},
 				groups = {cracky=3},
+				is_ground_content = false,
 				sounds = default.node_sound_metal_defaults(),
 				on_place = function(itemstack, placer, pointed_thing)
 					if pointed_thing.type ~= "node" then
@@ -127,6 +131,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 			on_place = function(itemstack, placer, pointed_thing)
 				if pointed_thing.type ~= "node" then
@@ -148,6 +153,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -170,6 +176,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -194,6 +201,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -244,6 +252,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -272,6 +281,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -312,6 +322,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -352,6 +363,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -419,6 +431,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -486,6 +499,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -551,6 +565,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -616,6 +631,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -714,6 +730,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -779,6 +796,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -844,6 +862,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -938,6 +957,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1031,6 +1051,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1052,6 +1073,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1073,6 +1095,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1171,6 +1194,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1192,6 +1216,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1213,6 +1238,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1295,6 +1321,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1375,6 +1402,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1486,6 +1514,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1595,6 +1624,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1675,6 +1705,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1757,6 +1788,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1868,6 +1900,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -1977,6 +2010,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2041,6 +2075,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2105,6 +2140,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2168,6 +2204,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2232,6 +2269,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2320,6 +2358,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2410,6 +2449,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2463,6 +2503,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2567,6 +2608,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2652,6 +2694,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2768,6 +2811,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2849,6 +2893,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -2965,6 +3010,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -3077,6 +3123,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -3273,6 +3320,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -3384,6 +3432,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -3410,6 +3459,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -3528,6 +3578,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -3554,6 +3605,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -3619,6 +3671,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -3684,6 +3737,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -3707,6 +3761,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 
@@ -3724,6 +3779,7 @@ if minetest.settings:get_bool("bridger_enable_trusses", true) then
 				},
 			},
 			groups = {cracky=3},
+			is_ground_content = false,
 			sounds = default.node_sound_metal_defaults(),
 		})
 	end
@@ -3798,6 +3854,7 @@ if minetest.settings:get_bool("bridger_enable_trestles", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -3824,6 +3881,7 @@ if minetest.settings:get_bool("bridger_enable_trestles", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -3905,6 +3963,7 @@ if minetest.settings:get_bool("bridger_enable_trestles", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -3935,6 +3994,7 @@ if minetest.settings:get_bool("bridger_enable_trestles", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -3983,6 +4043,7 @@ if minetest.settings:get_bool("bridger_enable_trestles", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4039,6 +4100,7 @@ if minetest.settings:get_bool("bridger_enable_trestles", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4080,6 +4142,7 @@ if minetest.settings:get_bool("bridger_enable_trestles", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4136,6 +4199,7 @@ if minetest.settings:get_bool("bridger_enable_trestles", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 end
@@ -4167,6 +4231,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4192,6 +4257,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4222,6 +4288,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4251,6 +4318,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4279,6 +4347,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4306,6 +4375,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4396,6 +4466,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4425,6 +4496,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4496,6 +4568,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 
@@ -4533,6 +4606,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			minetest.set_node(pos, {name = "bridger:large_beam_swivel_open", param2 = node.param2})
 		end,
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 		mesecons = {effector = {
 			action_on = function(pos, node)
@@ -4572,6 +4646,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 		end,
 		drop = "bridger:large_beam_swivel_normal",
 		groups = {choppy=3, not_in_creative_inventory=1},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 		mesecons = {effector = {
 			action_off = function(pos, node)
@@ -4610,6 +4685,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			minetest.set_node(pos, {name = "bridger:large_drawbridge_open", param2 = node.param2})
 		end,
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 		mesecons = {effector = {
 			action_on = function(pos, node)
@@ -4687,6 +4763,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 		end,
 		drop = "bridger:large_drawbridge_normal",
 		groups = {choppy=3, not_in_creative_inventory=1},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 		mesecons = {effector = {
 			action_off = function(pos, node)
@@ -4715,6 +4792,7 @@ if minetest.settings:get_bool("bridger_enable_wooden_bridges", true) then
 			},
 		},
 		groups = {choppy=3},
+		is_ground_content = false,
 		sounds = default.node_sound_wood_defaults(),
 	})
 end
