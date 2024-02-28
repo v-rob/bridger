@@ -7,6 +7,7 @@ minetest.register_node("bridger:scaffolding", {
 	walkable = false,
 	climbable = true,
 	groups = {cracky = 3, oddly_breakable_by_hand = 3, dig_immediate = 3},
+	is_ground_content = false,
 	sounds = default.node_sound_wood_defaults(),
 })
 
